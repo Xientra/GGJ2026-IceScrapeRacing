@@ -1,0 +1,63 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+RWTexture2D<float4> Result;
+int resolution;
+int circleSize;
+float2 mousePosition;
+
+//
+// [numthreads(1,1,1)]
+// void CSMain (uint3 id : SV_DispatchThreadID)
+// {
+//     //Result[id.xy] = float4(id.x & id.y, (id.x & 15)/15.0, (id.y & 15)/15.0, 0.0);
+//     
+//     if (id.x == mousePosition.x && id.y == mousePosition.y)
+//     {
+//         //Result[id.y * resolution + id.x] = float4(0, 0, 1, 1);
+//         Result[id.xy] = float4(0, 0, 1, 1);
+//     }
+//     else
+//     {
+//         //Result[id.y * resolution + id.x] = float4(0, 1, 0, 1);
+//         Result[id.xy] = float4(0, 1, 0, 1);
+//     }
+// }
+
+[numthreads(1,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    if (circleSize == -1)
+    {
+        Result[id.xy] = float4(0, 1, 0, 1);
+        return;
+    }
+    
+    
+    // bounds check (keep dispatch safe)
+    //if (id.x >= (uint)resolution || id.y >= (uint)resolution) return;
+
+    // pixel coordinate for this thread
+    int2 p = int2(id.x, id.y);
+
+    // convert mousePosition (float2) to integer pixel coords (rounded)
+    //int2 m = int2( (int)round(mousePosition.x), (int)round(mousePosition.y));
+
+    int dx = p.x - mousePosition.x;
+    int dy = p.y - mousePosition.y;
+
+    // squared distance test (avoids sqrt)
+    int distSq = dx*dx + dy*dy;
+    int rSq = circleSize * circleSize;
+
+    if (distSq <= rSq)
+    {
+        Result[id.xy] = float4(0, 0, 1, 0);
+    }
+    else
+    {
+        Result[id.xy] = float4(0, 1, 0, 1);
+    }
+}

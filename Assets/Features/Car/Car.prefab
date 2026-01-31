@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5342687066566260812}
   - component: {fileID: 2882264122118679629}
   - component: {fileID: 6428742266825960309}
+  - component: {fileID: 7168891210215693309}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -112,7 +113,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -168,6 +169,31 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &7168891210215693309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916346033421711958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: EPO::EPOOutline.Outliner
+  stage: 1
+  renderingStrategy: 0
+  renderingMode: 0
+  outlineLayerMask: -1
+  primaryBufferSizeMode: 0
+  primaryRendererScale: 0.75
+  primarySizeReference: 800
+  blurShift: 1
+  dilateShift: 1
+  dilateIterations: 1
+  dilateQuality: 0
+  blurIterations: 1
+  blurType: 1
 --- !u!1 &1470856504833417244
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +670,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4442330594724574480, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1352714555708187739}
+    - targetCorrespondingSourceObject: {fileID: 4442330594724574480, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1380954568603881952}
+    - targetCorrespondingSourceObject: {fileID: 4442330594724574480, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 12795704587463956}
   m_SourcePrefab: {fileID: 100100000, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
 --- !u!1 &825328264035267805 stripped
 GameObject:
@@ -664,8 +696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Radio
   audioClips: []
   redButton: {fileID: 3196401858529827170}
-  radioAudioSource: {fileID: 0}
-  pressOffset: 0.1
+  radioAudioSource: {fileID: 1352714555708187739}
+  pressOffset: 0.03
 --- !u!65 &291134392714576967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -681,7 +713,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -708,7 +740,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.25675568
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -784,6 +816,70 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1380954568603881952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825328264035267805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe91dc294731a9428c0941ea7579110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: EPO::EPOOutline.Outlinable
+  complexMaskingMode: 0
+  drawingMode: -1
+  outlineLayer: 1
+  outlineTargets:
+  - CutoutMask: 8
+    renderer: {fileID: 7966074102446422881}
+    SubmeshIndex: 1
+    BoundsMode: 0
+    Bounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+    CutoutThreshold: 0.313
+    CullMode: 2
+    cutoutTextureName: 
+    cutoutTextureIndex: 0
+  renderStyle: 1
+  outlineParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  backParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+  frontParameters:
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    dilateShift: 1
+    blurShift: 1
+    fillPass:
+      shader: {fileID: 0}
+      serializedProperties: []
+--- !u!114 &12795704587463956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825328264035267805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034bc47afcbf5e141a58d5c20b7808e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: EPO::EPOOutline.TargetStateListener
 --- !u!4 &3025556168710867018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6976466409580541561, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
@@ -844,6 +940,11 @@ MonoBehaviour:
   startAngle: -90
   carRigidBody: {fileID: 0}
   maxMagnitude: 5
+--- !u!23 &7966074102446422881 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6367911468402277036, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+  m_PrefabInstance: {fileID: 3950346873683902925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4997712169675443794
 PrefabInstance:
   m_ObjectHideFlags: 0

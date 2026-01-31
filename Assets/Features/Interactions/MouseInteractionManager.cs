@@ -1,10 +1,13 @@
 using System;
+using EPOOutline;
 using UnityEngine;
 
 public class MouseInteractionManager : MonoBehaviour
 {
     private  Camera _camera;
     private InputSystem_Actions _input;
+    
+    private Outlinable _lastOutlinable;
     
     private void Start()
     {
@@ -28,15 +31,36 @@ public class MouseInteractionManager : MonoBehaviour
             if (interacting)
             {
                 // Interact
-                var hitt = hit.collider.gameObject.GetComponent<IInteracttable>();
+                var interacttable = hit.collider.gameObject.GetComponent<IInteracttable>();
                 
-                if(hitt != null)
+                if(interacttable != null)
                 {
-                    hitt.OnInteract();
+                    interacttable.OnInteract();
                 }
+            }
+            
+            var outlinable = hit.collider.gameObject.GetComponent<Outlinable>();
                 
-                // Heilight Intteractable
-                
+            if(outlinable != null)
+            {
+                outlinable.enabled = true;
+                _lastOutlinable = outlinable;
+            }
+            else
+            {
+                if (_lastOutlinable != null)
+                {
+                    _lastOutlinable.enabled = false;
+                    _lastOutlinable = null;
+                } 
+            }
+        }
+        else
+        {
+            if (_lastOutlinable != null)
+            {
+                _lastOutlinable.enabled = false;
+                _lastOutlinable = null;
             }
         }
     }
@@ -45,4 +69,6 @@ public class MouseInteractionManager : MonoBehaviour
 public interface IInteracttable
 {
     public void OnInteract();
+    
+    public void OnHover();
 }

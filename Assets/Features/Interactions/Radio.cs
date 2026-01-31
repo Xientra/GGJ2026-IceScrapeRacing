@@ -27,4 +27,9 @@ public class Radio : MonoBehaviour, IInteracttable
         radioAudioSource.clip = audioClips[_currentIndex++];
         radioAudioSource.Play();
     }
+
+    public void OnHover()
+    {
+       
+    }
 }

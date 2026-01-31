@@ -220,6 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8717a0251754d124eb81dbc86a318835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Features.BrumBrum.CarController
+  OnEngineToggle:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEngineBroken:
+    m_PersistentCalls:
+      m_Calls: []
   accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -246,7 +252,15 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxCarAccel: 60
   maxCarVelocity: 5
-  carTurn: 40
+  steeringCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSteering: 20
+  crashSqrImpulseThreshold: 100
+  crashDuration: 2.5
 --- !u!65 &3756243973946380854
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class Ignishen : MonoBehaviour, IInteracttable
 
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, -90), duration).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 90), duration).SetAutoKill(true).SetEase(ease);
-        //CarCameraShake.Instance.StartLoopShake(0.01f);
+        CarCameraShake.Instance.StartLoopShake(0.01f);
     }
 
     public void OnEndInteract()
@@ -68,6 +68,6 @@ public class Ignishen : MonoBehaviour, IInteracttable
         IntroCutscene.Instance.EndIntro();
         CarController.Instance.OnToggleEngine(true);
         Debug.Log("Ignition started");
-        //CarCameraShake.Instance.StartLoopShake(0.005f);
+        CarCameraShake.Instance.StartLoopShake(0.005f);
     }
 }

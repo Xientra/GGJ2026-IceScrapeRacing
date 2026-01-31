@@ -15,6 +15,8 @@ public class Scraping : MonoBehaviour
     private InputSystem_Actions _input;
     private Camera _camera;
 
+    public Transform cameraParent;
+    
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class Scraping : MonoBehaviour
         _input.Enable();
 
         _camera = Camera.main;
-        _camera.transform.position = noramleCameraPos.position;
+        cameraParent.position = noramleCameraPos.position;
 
         //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = false;
@@ -54,20 +56,20 @@ public class Scraping : MonoBehaviour
         if (wasPressedThisFrame)
         {
             
-            _camera.transform.DOKill();
-            _camera.transform.DOLocalMove(scrapingCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
+            cameraParent.DOKill();
+            cameraParent.DOLocalMove(scrapingCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
-            _camera.transform.DOLocalRotate(scrapingCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
+            cameraParent.DOLocalRotate(scrapingCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
         }
 
         bool wasRealeasedThisFrame = _input.Player.Scrape.WasReleasedThisFrame();
         if (wasRealeasedThisFrame)
         {
-            _camera.transform.DOKill();
-            _camera.transform.DOLocalMove(noramleCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
+            cameraParent.DOKill();
+            cameraParent.DOLocalMove(noramleCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
-            _camera.transform.DOLocalRotate(noramleCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
+            cameraParent.DOLocalRotate(noramleCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
         }
     }

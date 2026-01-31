@@ -1,4 +1,5 @@
 using System;
+using Features.BrumBrum;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -19,6 +20,11 @@ public class UIButtonHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     }
 
     public UnityEvent OnButtonHeld;
+
+    public void Btn_ToggleEngine()
+    {
+        CarController.Instance.OnToggleEngine(true);
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {

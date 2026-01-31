@@ -3,7 +3,42 @@ guid: 39d510ba180061a40a36a7445a28b6c4
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown
+    second: {fileID: 2100000, guid: 7f296612c7e83f74c94a4f35a8269eab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carott
+    second: {fileID: 2100000, guid: a0c21bddfd4c1a24bb1322d4177f981b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hat
+    second: {fileID: 2100000, guid: a418eb39bed169e43b2b44b97d9a2a46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HatBand
+    second: {fileID: 2100000, guid: e6de925013e83554bbcf91fbfbd65a02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scarf
+    second: {fileID: 2100000, guid: 12d05569c674daf479ee6725a710d423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Schnee
+    second: {fileID: 2100000, guid: 4cee09852d32dba49a55f6c3b8a626ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: 730afa9c42960f54db345f253ae39a87, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

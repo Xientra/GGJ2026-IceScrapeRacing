@@ -18,7 +18,7 @@ public class UIButtonHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         randomTime = Random.Range(minTime, maxTime);
     }
 
-    public UnityEvent<bool> OnEngineToggle;
+    public UnityEvent OnEngineToggle;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -42,7 +42,7 @@ public class UIButtonHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
             {
                 isHolding = false;
                 holdTimer = 0f;
-                OnEngineToggle?.Invoke(true);
+                OnEngineToggle?.Invoke();
                 randomTime = Random.Range(minTime, maxTime);
                 Debug.Log("Button held for " + randomTime + " seconds!");
             }

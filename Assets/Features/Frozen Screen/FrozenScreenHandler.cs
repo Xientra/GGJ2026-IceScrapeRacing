@@ -13,10 +13,17 @@ public class FrozenScreenHandler : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float scrapeSize = 0.01f;
 
-
     public float clearStrength = 0.001f;
+    
+    [Header("Ice regrowth stuff")]
     public float iceRegrowth = 0.0001f;
-
+    public float iceRegrowthNeighbourFactor = 2;
+    public float maxIceRegrowthNeighbourFactor;
+    public float iceRegrowthNeighbourTreshold = 0.5f;
+    
+    [Header("Mouse controlls")]
+    public float mouseDeltaThreshold = 0.001f;
+    
     private InputSystem_Actions _input;
     private Camera _camera;
     private int _kernel;
@@ -53,6 +60,9 @@ public class FrozenScreenHandler : MonoBehaviour
         computeShader.SetFloat("scrapeSize", scrapeSize);
         computeShader.SetFloat("clearStrength", clearStrength);
         computeShader.SetFloat("iceRegrowth", iceRegrowth);
+        computeShader.SetFloat("iceRegrowthNeighbourFactor", iceRegrowthNeighbourFactor);
+        computeShader.SetFloat("iceRegrowthNeighbourThreshold", iceRegrowthNeighbourTreshold);
+        computeShader.SetFloat("maxIceRegrowthNeighbourFactor", maxIceRegrowthNeighbourFactor);
         computeShader.SetTexture(_kernel, "ScrapeMask", scrapeMask);
     }
 
@@ -72,6 +82,10 @@ public class FrozenScreenHandler : MonoBehaviour
         Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
         bool scraping = _input.Player.Scrape.IsPressed();
 
+        Debug.Log(Mouse.current.delta.ReadValue().sqrMagnitude);
+
+        scraping = Mouse.current.delta.ReadValue().sqrMagnitude < mouseDeltaThreshold ? false : true;
+        
         computeShader.SetBool("scraping", scraping);
         Vector2 windowUV = GetWindowUV(mousePos);
 

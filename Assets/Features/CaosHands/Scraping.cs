@@ -23,7 +23,7 @@ public class Scraping : MonoBehaviour
 
         _camera = Camera.main;
         _camera.transform.position = noramleCameraPos.position;
-        
+
         //Cursor.lockState = CursorLockMode.None;
         //Cursor.visible = false;
     }
@@ -31,39 +31,44 @@ public class Scraping : MonoBehaviour
     void Update()
     {
         bool scraping = _input.Player.Scrape.IsPressed();
-        
+
         if (scraping)
         {
             Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
             mousePos.x *= mouseSensivityMuliplayer;
             mousePos.y *= mouseSensivityMuliplayer;
-            
+
             var hitPosNorm = GetWindowWorldPos(mousePos);
 
             handPivo.position = hitPosNorm.Item1 + hitPosNorm.Item2 * noramlOffset;
-          leftHand.gameObject.SetActive(false);
+            leftHand.gameObject.SetActive(false);
         }
         else
         {
             handPivo.position = Vector3.zero;
             leftHand.gameObject.SetActive(true);
         }
-        
-        
+
+
         bool wasPressedThisFrame = _input.Player.Scrape.WasPressedThisFrame();
-        if(wasPressedThisFrame)
+        if (wasPressedThisFrame)
         {
+            
             _camera.transform.DOKill();
-            _camera.transform.DOMove(scrapingCameraPos.position, cameraAnimatonDuration).SetAutoKill(true).SetEase(cameraAnimatonEase);
-            _camera.transform.DORotate(scrapingCameraPos.rotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true).SetEase(cameraAnimatonEase);
+            _camera.transform.DOLocalMove(scrapingCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
+                .SetEase(cameraAnimatonEase);
+            _camera.transform.DOLocalRotate(scrapingCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
+                .SetEase(cameraAnimatonEase);
         }
 
         bool wasRealeasedThisFrame = _input.Player.Scrape.WasReleasedThisFrame();
         if (wasRealeasedThisFrame)
         {
             _camera.transform.DOKill();
-            _camera.transform.DOMove(noramleCameraPos.position, cameraAnimatonDuration).SetAutoKill(true).SetEase(cameraAnimatonEase);
-            _camera.transform.DORotate(noramleCameraPos.rotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true).SetEase(cameraAnimatonEase);
+            _camera.transform.DOLocalMove(noramleCameraPos.localPosition, cameraAnimatonDuration).SetAutoKill(true)
+                .SetEase(cameraAnimatonEase);
+            _camera.transform.DOLocalRotate(noramleCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
+                .SetEase(cameraAnimatonEase);
         }
     }
 

@@ -254,54 +254,6 @@ PrefabInstance:
       propertyPath: engineAudio
       value: 
       objectReference: {fileID: 1344075230}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: steeringCurve.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1344075225}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnToggleEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Features.BrumBrum.CarController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 591885556536656976, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: ToggleEngine.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7593833394316240096, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       propertyPath: m_Name
       value: Car and Window
@@ -352,10 +304,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3261397292591084363, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1344075230}
+      addedObject: {fileID: 1344075229}
     - targetCorrespondingSourceObject: {fileID: 3261397292591084363, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1344075229}
+      addedObject: {fileID: 1344075230}
   m_SourcePrefab: {fileID: 100100000, guid: 9c3be46298fef5646af195c639e18090, type: 3}
 --- !u!1001 &1195116285
 PrefabInstance:

@@ -80,7 +80,7 @@ public class FrozenScreenHandler : MonoBehaviour
     private void Update()
     {
         Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
-        bool scraping = _input.Player.Scrape.IsPressed() && Mouse.current.delta.ReadValue().sqrMagnitude < mouseDeltaThreshold;
+        bool scraping = _input.Player.Scrape.IsPressed() && Mouse.current.delta.ReadValue().sqrMagnitude > mouseDeltaThreshold;
         
         computeShader.SetBool("scraping", scraping);
         Vector2 windowUV = GetWindowUV(mousePos);

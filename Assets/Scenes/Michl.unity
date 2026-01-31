@@ -493,28 +493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &840689027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 423180518944023733, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-  m_PrefabInstance: {fileID: 1655908244}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &840689029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840689027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f6411befe578b4588170fa4b85a7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SteeringWeel
-  x: 0
-  maxAngle: 90
-  weel: {fileID: 1518671795}
-  rotateEase: 1
-  rotateDuration: 0.3
 --- !u!4 &1160420592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 955291224822106155, guid: 5e08d2b2c2ddd5b4b86f93c2479ee5e6, type: 3}
@@ -641,10 +619,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1236283514496925077, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236283514496925077, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236283514496925077, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1294282578593469925, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1730175415}
+    - target: {fileID: 1380791572242472352, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: tachoMeter
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1670096516890532743, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -719,10 +713,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1598924523972513891, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3830473755510726264}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 423180518944023733, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 840689029}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c3be46298fef5646af195c639e18090, type: 3}
 --- !u!4 &1730175415 stripped
 Transform:

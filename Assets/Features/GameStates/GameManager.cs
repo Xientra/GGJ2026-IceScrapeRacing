@@ -40,22 +40,19 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    private void Start()
-    {
-        StartGame();
-    }
+    
 
     private void Update()
     {
-        if (GameIsRunning)
-            _remainingTime -= Time.deltaTime;
+        if (!GameIsRunning) return;
+        
+        _remainingTime -= Time.deltaTime;
 
         if (_remainingTime <= 0)
             EndGame(false);
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         GameIsRunning = true;
         _remainingTime = timeInSeconds;

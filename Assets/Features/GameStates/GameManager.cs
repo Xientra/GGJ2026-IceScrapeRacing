@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        _remainingTime = timeInSeconds;
     }
     
 

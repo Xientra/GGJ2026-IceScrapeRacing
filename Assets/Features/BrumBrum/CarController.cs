@@ -8,6 +8,8 @@ namespace Features.BrumBrum
     [RequireComponent(typeof(Rigidbody))]
     public class CarController : MonoBehaviour
     {
+        public static CarController Instance { get; private set; }
+
         public UnityEvent<bool> OnEngineToggle;
         public UnityEvent<bool> OnEngineBroken;
         
@@ -35,6 +37,7 @@ namespace Features.BrumBrum
 
         private void Awake()
         {
+            Instance = this;
             this._rb = this.GetComponent<Rigidbody>();
         }
 

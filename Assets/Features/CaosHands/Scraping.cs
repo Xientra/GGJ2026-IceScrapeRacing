@@ -74,11 +74,12 @@ public class Scraping : MonoBehaviour
 
     private (Vector3, Vector3) GetWindowWorldPos(Vector2 mousePos)
     {
-        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 50, windowLayer))
+        var ray = _camera.ScreenPointToRay(mousePos);
+        if (Physics.Raycast(ray, out RaycastHit hit, 50, windowLayer))
         {
-            Debug.DrawRay(_camera.ScreenPointToRay(mousePos).origin, _camera.ScreenPointToRay(mousePos).direction * 12,
+            Debug.DrawRay(ray.origin, ray.direction * 12,
                 Color.blue);
-            return (hit.point, -hit.normal);
+            return (hit.point, ray.direction.normalized);
         }
 
         return (Vector3.zero, Vector2.zero);

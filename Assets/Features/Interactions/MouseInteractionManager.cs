@@ -28,15 +28,19 @@ public class MouseInteractionManager : MonoBehaviour
         
         if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100))
         {
+            var interacttable = hit.collider.gameObject.GetComponent<IInteracttable>();
             if (interacting)
             {
                 // Interact
-                var interacttable = hit.collider.gameObject.GetComponent<IInteracttable>();
-                
                 if(interacttable != null)
                 {
                     interacttable.OnInteract();
                 }
+            }
+            
+            if(interacttable != null)
+            {
+                interacttable.OnHover();
             }
             
             var outlinable = hit.collider.gameObject.GetComponent<Outlinable>();

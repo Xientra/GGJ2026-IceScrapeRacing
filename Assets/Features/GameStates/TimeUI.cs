@@ -13,6 +13,7 @@ public class TimeUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        timeLabel.text = GameManager.Instance.CurrentTime.ToString(@"hh\:mm\:ss");
+        bool even = (int)(Time.time % 2) == 0;
+        timeLabel.text = GameManager.Instance.CurrentTime.ToString(even ? @"hh\:mm" : @"hh\ mm");
     }
 }

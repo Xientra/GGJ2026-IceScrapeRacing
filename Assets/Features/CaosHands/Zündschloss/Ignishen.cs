@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Features.BrumBrum;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,6 +29,7 @@ public class Ignishen : MonoBehaviour, IInteracttable
 
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, -90), duration).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 90), duration).SetAutoKill(true).SetEase(ease);
+        //CarCameraShake.Instance.StartLoopShake(0.01f);
     }
 
     public void OnEndInteract()
@@ -55,8 +57,17 @@ public class Ignishen : MonoBehaviour, IInteracttable
                 isHolding = false;
                 holdTimer = 0f;
                 randomTime = Random.Range(minTime, maxTime);
-                Debug.Log("Button held for " + randomTime + " seconds!");
+                OnIgnitionStarted();
+                OnEndInteract();
             }
         }
+    }
+
+    private void OnIgnitionStarted()
+    {
+        IntroCutscene.Instance.EndIntro();
+        CarController.Instance.OnToggleEngine(true);
+        Debug.Log("Ignition started");
+        //CarCameraShake.Instance.StartLoopShake(0.005f);
     }
 }

@@ -28,6 +28,11 @@ public class Radio : MonoBehaviour, IInteracttable
         radioAudioSource.Play();
     }
 
+    public void OnEndInteract()
+    {
+        throw new NotImplementedException();
+    }
+
     public void OnHover()
     {
        

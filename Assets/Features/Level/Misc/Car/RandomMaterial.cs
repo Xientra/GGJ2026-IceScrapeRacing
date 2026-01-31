@@ -10,6 +10,6 @@ public class RandomMaterial : MonoBehaviour
     
     private void Start()
     {
-        GetComponent<MeshRenderer>().sharedMaterials[index] = materials[Random.Range(0, materials.Length)];
+        //GetComponent<MeshRenderer>().sharedMaterials[index] = materials[Random.Range(0, materials.Length)];
     }
 }

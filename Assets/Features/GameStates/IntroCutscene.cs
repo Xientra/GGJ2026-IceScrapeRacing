@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class IntroCutscene : MonoBehaviour
 {
-    [Header("GameManager")] 
-    public GameManager GameManager;
     [Header("Intro References")]
     public RectTransform introText;
     public RectTransform introAnchor;
@@ -70,7 +68,7 @@ public class IntroCutscene : MonoBehaviour
 
         seq.onComplete = () =>
         {
-            GameManager.StartGame();
+            GameManager.Instance.StartGame();
             Tutorial();
         };
     }

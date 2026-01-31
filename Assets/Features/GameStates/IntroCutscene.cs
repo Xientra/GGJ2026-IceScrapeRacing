@@ -51,7 +51,7 @@ public class IntroCutscene : MonoBehaviour
     }
 
     [ContextMenu("EndIntro")]
-    public void EndIntro()
+    public void EndIntro(bool value)
     {
         Sequence seq = DOTween.Sequence();
 

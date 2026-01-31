@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4585916ca8576304e9e98de65608daf3, type: 2}
+  - {fileID: 2100000, guid: ed6caa1b9fd0b2349901049b0abc7204, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,5 +133,8 @@ MonoBehaviour:
   renderTexture: {fileID: 8400000, guid: b95a2bf187131b74493a7b363d788f4f, type: 2}
   scrapeMask: {fileID: 2800000, guid: 877f05d48249e8e499fda767e75f7d05, type: 3}
   scrapeSize: 0.1
-  clearStrength: 0.01
-  iceRegrowth: 0
+  clearStrength: 0.3
+  iceRegrowth: 0.01
+  iceRegrowthNeighbourFactor: 0.2
+  maxIceRegrowthNeighbourFactor: 0.5
+  iceRegrowthNeighbourTreshold: 0.2

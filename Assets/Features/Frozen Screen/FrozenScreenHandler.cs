@@ -13,10 +13,14 @@ public class FrozenScreenHandler : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float scrapeSize = 0.01f;
 
-
     public float clearStrength = 0.001f;
+    
+    [Header("Ice regrowth stuff")]
     public float iceRegrowth = 0.0001f;
-
+    public float iceRegrowthNeighbourFactor = 2;
+    public float maxIceRegrowthNeighbourFactor;
+    public float iceRegrowthNeighbourTreshold = 0.5f;
+    
     private InputSystem_Actions _input;
     private Camera _camera;
     private int _kernel;
@@ -53,6 +57,9 @@ public class FrozenScreenHandler : MonoBehaviour
         computeShader.SetFloat("scrapeSize", scrapeSize);
         computeShader.SetFloat("clearStrength", clearStrength);
         computeShader.SetFloat("iceRegrowth", iceRegrowth);
+        computeShader.SetFloat("iceRegrowthNeighbourFactor", iceRegrowthNeighbourFactor);
+        computeShader.SetFloat("iceRegrowthNeighbourThreshold", iceRegrowthNeighbourTreshold);
+        computeShader.SetFloat("maxIceRegrowthNeighbourFactor", maxIceRegrowthNeighbourFactor);
         computeShader.SetTexture(_kernel, "ScrapeMask", scrapeMask);
     }
 

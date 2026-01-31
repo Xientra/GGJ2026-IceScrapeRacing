@@ -605,7 +605,10 @@ MonoBehaviour:
   scrapeMask: {fileID: 2800000, guid: 877f05d48249e8e499fda767e75f7d05, type: 3}
   scrapeSize: 0.1
   clearStrength: 0.3
-  iceRegrowth: 0.02
+  iceRegrowth: 0.05
+  iceRegrowthNeighbourFactor: 0.1
+  iceRegrowthNeighbourTreshold: 0.2
+  maxIceRegrowthNeighbourFactor: 0.2
 --- !u!4 &713360026
 Transform:
   m_ObjectHideFlags: 0

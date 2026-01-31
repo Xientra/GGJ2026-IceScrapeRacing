@@ -15,13 +15,27 @@ public class GameManager : MonoBehaviour
 
     public float RemainingTime => _remainingTime;
     public TimeSpan RemainingTimeSpan => TimeSpan.FromSeconds(_remainingTime);
+    public DateTime CurrentTime
+    {
+        get
+        {
+            float inUniversePassedSeconds = (1 - (_remainingTime / timeInSeconds)) * inUniverseTimeInSeconds;
+            return new DateTime(2026, 2, 2, startHour, startMinutes, 0) + TimeSpan.FromSeconds(inUniversePassedSeconds);
+        }
+    }
 
     public event EventHandler<bool> GameOver;
 
     [Header("9 to 5")]
     [SerializeField]
-    private float uuuuhIWillMakeThisLater = 9f;
+    private float inUniverseTimeInSeconds = 60 * 30f;
 
+    [SerializeField]
+    private int startHour = 8;
+
+    [SerializeField]
+    private int startMinutes = 30;
+    
     private void Awake()
     {
         Instance = this;

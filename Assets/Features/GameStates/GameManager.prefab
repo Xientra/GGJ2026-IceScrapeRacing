@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   <GameIsRunning>k__BackingField: 0
   timeInSeconds: 180
-  uuuuhIWillMakeThisLater: 9
+  inUniverseTimeInSeconds: 1800
+  startHour: 8
+  startMinutes: 30
 --- !u!1 &6639306041971579305
 GameObject:
   m_ObjectHideFlags: 0

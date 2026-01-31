@@ -13,12 +13,17 @@ namespace Features.BrumBrum
         private Rigidbody _rb;
 
         //[SerializeField] private float carMass;
-        [SerializeField] private float carAccel = 1;
+        [Header("Driving")] [SerializeField] private AnimationCurve accelerationCurve;
+        [SerializeField] private float maxCarAccel = 1;
+
+        [SerializeField] private float maxCarVelocity = 30;
+        
+        [Header("Steering")] 
         [SerializeField] private float carTurn = 1;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
-        
+
         private void Awake()
         {
             this._rb = this.GetComponent<Rigidbody>();
@@ -30,13 +35,13 @@ namespace Features.BrumBrum
             this._input.Enable();
 
             this._input.Player.Move.performed += OnMove;
-            this._input.Player.Move.canceled  += OnMove;
+            this._input.Player.Move.canceled += OnMove;
         }
 
         void OnDisable()
         {
             this._input.Player.Move.performed -= OnMove;
-            this._input.Player.Move.canceled  -= OnMove;
+            this._input.Player.Move.canceled -= OnMove;
             this._input.Player.Disable();
         }
 
@@ -47,23 +52,37 @@ namespace Features.BrumBrum
 
         private void FixedUpdate()
         {
+            // don't scrape and drive
+            if (this._input.Player.Scrape.IsPressed()) return;
+            
+            float curVel = this._rb.linearVelocity.magnitude;
+            float curVel01 = Mathf.Clamp01(curVel / maxCarVelocity);
+            AddSteering(curVel01);
+            AddDrivingForce(curVel01);
+        }
+
+        private void AddDrivingForce(float curVel01)
+        {
+            float accel = this.accelerationCurve.Evaluate(curVel01) * maxCarAccel;
+            
             // Forward Backward
-            float forwardAccel = this._move.y * carAccel;
+            float forwardAccel = this._move.y * accel; 
+            //   Debug.Log($"forAccel: {forwardAccel}, VelRel: {curVel01} Accel: {accel}");
 
-            // F = ma
-            float forwardForce = this._rb.mass * forwardAccel;
-            
-            Vector3 forwardForceDir = forwardForce * this.transform.forward;
+            Vector3 forwardForceDir = forwardAccel * this.transform.forward;
 
-            this._rb.AddForce(forwardForceDir);
-            
-            
-            // Turning
-            float turn = this._move.y * this._move.x * carTurn;
+            this._rb.AddForce(forwardForceDir, ForceMode.Acceleration);
 
-            Vector3 turnDir = Vector3.up * turn;
-            
-            this._rb.AddTorque(turnDir);
+        }
+
+        private void AddSteering(float curVel01)
+        {
+            if (this._rb.linearVelocity.sqrMagnitude > 0.1)
+            {
+                float turn = this._move.x * carTurn * curVel01;
+                Vector3 turnDir = Vector3.up * turn;
+                this._rb.AddTorque(turnDir);   
+            }
         }
     }
 }

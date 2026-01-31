@@ -192,9 +192,9 @@ Rigidbody:
   m_Mass: 1
   m_LinearDamping: 4
   m_AngularDamping: 10
-  m_CenterOfMass: {x: 0, y: -1, z: 0}
+  m_CenterOfMass: {x: 0, y: -1, z: -2}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_InertiaRotation: {x: 0.008726203, y: -0.00007615242, z: 0.008726203, w: 0.9999238}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -220,7 +220,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8717a0251754d124eb81dbc86a318835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Features.BrumBrum.CarController
-  carAccel: 1
+  accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxCarAccel: 60
+  maxCarVelocity: 5
   carTurn: 40
 --- !u!65 &3756243973946380854
 BoxCollider:

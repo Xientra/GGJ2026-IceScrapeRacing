@@ -132,8 +132,8 @@ MonoBehaviour:
   computeShader: {fileID: 7200000, guid: 982ef684b92ed6a4a9d327a42643556e, type: 3}
   renderTexture: {fileID: 8400000, guid: b95a2bf187131b74493a7b363d788f4f, type: 2}
   scrapeMask: {fileID: 2800000, guid: a5d3b651d8a38fe47aa11f8b3d96c301, type: 3}
-  scrapeSize: 0.1
-  clearStrength: 0.5
+  scrapeSize: 0.15
+  clearStrength: 0.9
   iceRegrowth: 0.03
   iceRegrowthNeighbourFactor: 0.2
   maxIceRegrowthNeighbourFactor: 0.5

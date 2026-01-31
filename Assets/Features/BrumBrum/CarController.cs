@@ -1,13 +1,16 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Features.BrumBrum
 {
     [RequireComponent(typeof(Rigidbody))]
     public class CarController : MonoBehaviour
     {
+        public UnityEvent<bool> OnEngineToggle;
+        public UnityEvent<bool> OnEngineBroken;
+        
         // system vars
         private InputSystem_Actions _input;
         private Rigidbody _rb;
@@ -17,12 +20,18 @@ namespace Features.BrumBrum
         [SerializeField] private float maxCarAccel = 1;
 
         [SerializeField] private float maxCarVelocity = 30;
+
+        [Header("Steering")] [SerializeField] private AnimationCurve steeringCurve;
+        [SerializeField] private float maxSteering = 20;
+
+        [Header("Collision")] [SerializeField] private float crashSqrImpulseThreshold = 100;
+        [SerializeField] private float crashDuration = 2.5f;
         
-        [Header("Steering")] 
-        [SerializeField] private float carTurn = 1;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
+        private bool _engineOn = false;
+        private bool _engineBroken = false;
 
         private void Awake()
         {
@@ -53,7 +62,7 @@ namespace Features.BrumBrum
         private void FixedUpdate()
         {
             // don't scrape and drive
-            if (this._input.Player.Scrape.IsPressed()) return;
+            if (this._input.Player.Scrape.IsPressed() || !this._engineOn) return;
             
             float curVel = this._rb.linearVelocity.magnitude;
             float curVel01 = Mathf.Clamp01(curVel / maxCarVelocity);
@@ -70,6 +79,7 @@ namespace Features.BrumBrum
             //   Debug.Log($"forAccel: {forwardAccel}, VelRel: {curVel01} Accel: {accel}");
 
             Vector3 forwardForceDir = forwardAccel * this.transform.forward;
+            forwardForceDir.y = 0;
 
             this._rb.AddForce(forwardForceDir, ForceMode.Acceleration);
 
@@ -79,10 +89,32 @@ namespace Features.BrumBrum
         {
             if (this._rb.linearVelocity.sqrMagnitude > 0.1)
             {
-                float turn = this._move.x * carTurn * curVel01;
+                int dirMul = this._move.y < 0 ? -1 : 1;
+
+                float carTurn = this.steeringCurve.Evaluate(curVel01) * maxSteering;
+                
+                float turn = this._move.x * carTurn * dirMul;
                 Vector3 turnDir = Vector3.up * turn;
                 this._rb.AddTorque(turnDir);   
             }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.impulse.sqrMagnitude > this.crashSqrImpulseThreshold)
+            {
+                UnityEngine.Debug.Log("crash");
+                this._engineOn = false;
+                OnEngineToggle?.Invoke(_engineOn);
+                this._engineBroken = true;
+                OnEngineBroken?.Invoke(_engineBroken);
+
+            }
+        }
+
+        public void OnToggleEngine(bool on)
+        {
+            this._engineOn = on;
         }
     }
 }

@@ -24,12 +24,11 @@ float deltaTime;
 [numthreads(1,1,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    if (scraping == false)
-    {
-        return;
-    }
-    
     float clear = 1.0f;
+    
+    if (scraping == false)
+        clear = 0.0f;
+        
 
     float mx = max(resolution.x, resolution.y);
     float2 uv_mx = id.xy / mx;

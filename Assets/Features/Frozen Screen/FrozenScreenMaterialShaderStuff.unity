@@ -291,10 +291,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6240076690896945284, guid: 976bb646f00467b458526d6443dff366, type: 3}
-      propertyPath: mouseDeltaThreshold
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6471664020454942624, guid: 976bb646f00467b458526d6443dff366, type: 3}
       propertyPath: m_Name
       value: CarWindow (1)

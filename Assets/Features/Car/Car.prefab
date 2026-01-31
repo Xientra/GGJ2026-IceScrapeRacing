@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2882264122118679629}
   - component: {fileID: 6428742266825960309}
   - component: {fileID: 7168891210215693309}
+  - component: {fileID: 3196427035293378733}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -194,6 +195,20 @@ MonoBehaviour:
   dilateQuality: 0
   blurIterations: 1
   blurType: 1
+--- !u!114 &3196427035293378733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916346033421711958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95315819bdcd0c347a55476ce197fa49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarCameraShake
+  shakeSpeed: 10
+  smoothing: 8
 --- !u!1 &1470856504833417244
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +653,7 @@ MonoBehaviour:
   keyHole: {fileID: 1894063859157172680}
   ease: 18
   duration: 0.3
+  ignitionShakeMagnitude: 0.05
   minTime: 2
   maxTime: 5
 --- !u!136 &3890669179225471572
@@ -1921,6 +1937,10 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 1431446247104245649}
+    - target: {fileID: 6889067785858433439, guid: a7cec750c8786a04390b5b9071754927, type: 3}
+      propertyPath: cameraParent
+      value: 
+      objectReference: {fileID: 427852616819181328}
     - target: {fileID: 6889067785858433439, guid: a7cec750c8786a04390b5b9071754927, type: 3}
       propertyPath: noramlOffset
       value: 0.25

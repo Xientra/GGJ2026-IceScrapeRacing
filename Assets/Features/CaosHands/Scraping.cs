@@ -7,6 +7,7 @@ public class Scraping : MonoBehaviour
     [SerializeField] private LayerMask windowLayer;
     [SerializeField] private float noramlOffset;
     [SerializeField] private float mouseSensivityMuliplayer = 1;
+    [SerializeField] private Transform leftHand;
     [SerializeField] private Transform noramleCameraPos;
     [SerializeField] private Transform scrapingCameraPos;
     [SerializeField] private float cameraAnimatonDuration = 1;
@@ -40,10 +41,12 @@ public class Scraping : MonoBehaviour
             var hitPosNorm = GetWindowWorldPos(mousePos);
 
             handPivo.position = hitPosNorm.Item1 + hitPosNorm.Item2 * noramlOffset;
+          leftHand.gameObject.SetActive(false);
         }
         else
         {
             handPivo.position = Vector3.zero;
+            leftHand.gameObject.SetActive(true);
         }
         
         

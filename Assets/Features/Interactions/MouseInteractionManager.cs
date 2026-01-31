@@ -8,6 +8,7 @@ public class MouseInteractionManager : MonoBehaviour
     private InputSystem_Actions _input;
     
     private Outlinable _lastOutlinable;
+    private IInteracttable _lastInteracttable;
     
     private void Start()
     {
@@ -22,9 +23,9 @@ public class MouseInteractionManager : MonoBehaviour
         Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
         bool scraping = _input.Player.Scrape.IsPressed();
         bool interacting = _input.Player.Interact.WasPressedThisFrame();
+        bool endInteracting = _input.Player.Interact.WasReleasedThisFrame();
 
         if(scraping) return;
-        
         
         if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100))
         {
@@ -35,6 +36,16 @@ public class MouseInteractionManager : MonoBehaviour
                 if(interacttable != null)
                 {
                     interacttable.OnInteract();
+                    _lastInteracttable = interacttable;
+                }
+            }
+            
+            if(endInteracting)
+            {
+                if(_lastInteracttable != null)
+                {
+                    _lastInteracttable.OnEndInteract();
+                    _lastInteracttable = null;
                 }
             }
             
@@ -61,6 +72,16 @@ public class MouseInteractionManager : MonoBehaviour
         }
         else
         {
+            
+            if(endInteracting)
+            {
+                if(_lastInteracttable != null)
+                {
+                    _lastInteracttable.OnEndInteract();
+                    _lastInteracttable = null;
+                }
+            }
+            
             if (_lastOutlinable != null)
             {
                 _lastOutlinable.enabled = false;
@@ -73,6 +94,7 @@ public class MouseInteractionManager : MonoBehaviour
 public interface IInteracttable
 {
     public void OnInteract();
+    public void OnEndInteract();
     
     public void OnHover();
 }

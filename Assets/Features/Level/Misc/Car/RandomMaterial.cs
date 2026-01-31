@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomMaterial : MonoBehaviour
@@ -10,6 +11,11 @@ public class RandomMaterial : MonoBehaviour
     
     private void Start()
     {
-        //GetComponent<MeshRenderer>().sharedMaterials[index] = materials[Random.Range(0, materials.Length)];
+        List<Material> mats = new List<Material>();
+        GetComponent<MeshRenderer>().GetSharedMaterials(mats);
+            
+        mats[index] = materials[Random.Range(0, materials.Length)];
+        
+        GetComponent<MeshRenderer>().SetSharedMaterials(mats);
     }
 }

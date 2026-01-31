@@ -35,10 +35,18 @@ namespace Features.BrumBrum
         [Header("Audio")]
         [SerializeField] private AudioSource engineAudio;
         [SerializeField] private AudioSource crashAudio;
+        [SerializeField] private AnimationCurve enginePitchCurve;
+        [SerializeField] private float engineOverPitch = 0.5f;
+        [SerializeField] private float baseEnginePitch = 0.25f;
+        [SerializeField] private float pitchDecelerationLerp = 2f;
+
+        [Header("Other")] 
+        [SerializeField] private float ignitionShakeMagnitude = 0.01f;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
         private bool _engineOn = false;
+        public bool EngineOn => _engineOn;
         private bool _engineBroken = false;
         private int _currentCrashes = 0;
 
@@ -80,7 +88,6 @@ namespace Features.BrumBrum
             AddSteering(curVel01);
             AddDrivingForce(curVel01);
 
-            this.engineAudio.pitch = curVel01;
         }
 
         private void AddDrivingForce(float curVel01)
@@ -90,6 +97,18 @@ namespace Features.BrumBrum
             // Forward Backward
             float forwardAccel = this._move.y * accel; 
             //   Debug.Log($"forAccel: {forwardAccel}, VelRel: {curVel01} Accel: {accel}");
+            if(Mathf.Abs(this._move.y) > 0)
+            {
+                float relAccel = Mathf.Abs(forwardAccel) / maxCarAccel;
+                this.engineAudio.pitch = Mathf.Max(baseEnginePitch, enginePitchCurve.Evaluate(relAccel));
+            } else if (this.engineAudio.pitch > baseEnginePitch + 0.1f)
+            {
+                this.engineAudio.pitch = Mathf.Lerp(this.engineAudio.pitch, baseEnginePitch, pitchDecelerationLerp);
+            }
+            else
+            {
+                this.engineAudio.pitch = baseEnginePitch;
+            }
 
             Vector3 forwardForceDir = forwardAccel * this.transform.forward;
             forwardForceDir.y = 0;
@@ -146,7 +165,6 @@ namespace Features.BrumBrum
         {
             if (other.impulse.sqrMagnitude > this.crashSqrImpulseThreshold)
             {
-                UnityEngine.Debug.Log("crash");
                 //sound
                 float randPitch = Random.Range(0.5f, 1.5f);
                 this.crashAudio.pitch = randPitch;
@@ -173,10 +191,12 @@ namespace Features.BrumBrum
             if (on)
             {
                 this.engineAudio.Play();
+                CarCameraShake.Instance.StartLoopShake(ignitionShakeMagnitude);
             }
             else
             {
                 this.engineAudio.Stop();
+                CarCameraShake.Instance.StopLoopShake();
             }
         }
     }

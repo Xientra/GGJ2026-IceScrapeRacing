@@ -2,10 +2,13 @@ using System;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class IntroCutscene : MonoBehaviour
 {
+    public static IntroCutscene Instance { get; private set; }
+    
     [Header("Intro References")]
     public RectTransform introText;
     public RectTransform introAnchor;
@@ -22,6 +25,14 @@ public class IntroCutscene : MonoBehaviour
     private Vector3 DrivingTutorialPosition;
     public RectTransform DrivingTutorialAnchor;
 
+
+    private bool _isIntroFinished = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
     private void Start()
     {
         Invoke(nameof(StartIntro), 2f);
@@ -47,10 +58,12 @@ public class IntroCutscene : MonoBehaviour
             arrowAndButton.DOFade(1f, 1f)
         );
     }
-
+    
     [ContextMenu("EndIntro")]
     public void EndIntro()
     {
+        if(_isIntroFinished) return;
+        
         Sequence seq = DOTween.Sequence();
 
         seq.Append(
@@ -71,6 +84,8 @@ public class IntroCutscene : MonoBehaviour
             GameManager.Instance.StartGame();
             Tutorial();
         };
+
+        _isIntroFinished = true;
     }
 
     public void Tutorial()

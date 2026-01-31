@@ -338,11 +338,107 @@ PrefabInstance:
     - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
       propertyPath: crashAudio
       value: 
-      objectReference: {fileID: 6590615302225244863}
+      objectReference: {fileID: 6231275792602224239}
     - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
       propertyPath: engineAudio
       value: 
-      objectReference: {fileID: 7307497708485310124}
+      objectReference: {fileID: 8837249908282684960}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: pitchDecelerationLerp
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[0].time
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[0].value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[1].value
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[2].value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[0].inSlope
+      value: -2.4220347
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[1].inSlope
+      value: 0.0076197744
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[2].inSlope
+      value: 4.1493554
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[0].outSlope
+      value: -2.4220347
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[1].outSlope
+      value: 0.0076197744
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[2].inWeight
+      value: 0.08267009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[2].outSlope
+      value: 4.1493554
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[0].outWeight
+      value: 0.09526384
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: enginePitchCurve.m_Curve.Array.data[1].outWeight
+      value: 0.42000225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 591885556536656976}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnToggleEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Features.BrumBrum.CarController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: OnEngineToggle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403474774529160870, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: maxMagnitude
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -358,8 +454,22 @@ PrefabInstance:
       addedObject: {fileID: 6590615302225244863}
     - targetCorrespondingSourceObject: {fileID: 5401050537050658893, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7307497708485310124}
+      addedObject: {fileID: 6231275792602224239}
+    - targetCorrespondingSourceObject: {fileID: 5401050537050658893, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8837249908282684960}
   m_SourcePrefab: {fileID: 100100000, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+--- !u!114 &591885556536656976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8034529011492515670, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+  m_PrefabInstance: {fileID: 7473351217261423366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261397292591084363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8717a0251754d124eb81dbc86a318835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Features.BrumBrum.CarController
 --- !u!1 &3261397292591084363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5401050537050658893, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
@@ -462,7 +572,104 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &7307497708485310124
+--- !u!82 &6231275792602224239
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261397292591084363}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: de43094e9f523a64fb098b0bb6ea90e7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &8837249908282684960
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

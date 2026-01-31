@@ -256,6 +256,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!82 &432844931 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3245305964499745906, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+  m_PrefabInstance: {fileID: 1655908244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &552941046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,6 +583,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3183764462202690802, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: pressOffset
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183764462202690802, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: radioAudioSource
+      value: 
+      objectReference: {fileID: 432844931}
+    - target: {fileID: 3183764462202690802, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245305964499745906, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: MinDistance
+      value: 0.25675568
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307195085972102254, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7593833394316240096, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       propertyPath: m_Name
       value: Car and Window
@@ -625,8 +650,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2249807900819230627, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2048814865}
   m_SourcePrefab: {fileID: 100100000, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+--- !u!1 &2048814861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249807900819230627, guid: 9c3be46298fef5646af195c639e18090, type: 3}
+  m_PrefabInstance: {fileID: 1655908244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2048814865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048814861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc28fb390e7859c46b30f63a562b9d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Radio
+  audioClips: []
+  redButton: {fileID: 0}
+  radioAudioSource: {fileID: 0}
+  pressOffset: 0.1
 --- !u!1001 &1714871933404388058
 PrefabInstance:
   m_ObjectHideFlags: 0

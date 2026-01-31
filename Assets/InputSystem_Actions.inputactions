@@ -233,6 +233,17 @@
                 },
                 {
                     "name": "",
+                    "id": "05a65328-efa6-4de5-97ab-a524fa1860e2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d50efb23-8496-4de7-9a37-c0fb1767ae35",
                     "path": "<Mouse>/position",
                     "interactions": "",

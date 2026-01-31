@@ -138,7 +138,19 @@ MonoBehaviour:
   maxTime: 5
   OnEngineToggle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5621180995667621293}
+        m_TargetAssemblyTypeName: IntroCutscene, Assembly-CSharp
+        m_MethodName: EndIntro
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &597780105754360126
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f755b793122c36045837155c0308dfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntroCutscene
-  GameManager: {fileID: 0}
   introText: {fileID: 8115175135593184233}
   introAnchor: {fileID: 5277302471421866457}
   introAnchorEnd: {fileID: 5108365426577020086}

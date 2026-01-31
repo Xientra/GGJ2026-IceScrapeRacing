@@ -81,6 +81,7 @@ public class FrozenScreenHandler : MonoBehaviour
 
         SetShaderVariables();
         computeShader.SetFloats("scrapeUV", windowUV.x, windowUV.y);
+        computeShader.SetFloat("deltaTime", Time.deltaTime);
 
         computeShader.Dispatch(_kernel, renderTexture.width, renderTexture.height, 1);
     }

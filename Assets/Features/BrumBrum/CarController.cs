@@ -39,11 +39,14 @@ namespace Features.BrumBrum
         [SerializeField] private float engineOverPitch = 0.5f;
         [SerializeField] private float baseEnginePitch = 0.25f;
         [SerializeField] private float pitchDecelerationLerp = 2f;
-        
+
+        [Header("Other")] 
+        [SerializeField] private float ignitionShakeMagnitude = 0.01f;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
         private bool _engineOn = false;
+        public bool EngineOn => _engineOn;
         private bool _engineBroken = false;
         private int _currentCrashes = 0;
 
@@ -188,10 +191,12 @@ namespace Features.BrumBrum
             if (on)
             {
                 this.engineAudio.Play();
+                CarCameraShake.Instance.StartLoopShake(ignitionShakeMagnitude);
             }
             else
             {
                 this.engineAudio.Stop();
+                CarCameraShake.Instance.StopLoopShake();
             }
         }
     }

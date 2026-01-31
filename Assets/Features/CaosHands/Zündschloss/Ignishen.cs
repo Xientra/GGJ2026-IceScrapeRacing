@@ -9,6 +9,8 @@ public class Ignishen : MonoBehaviour, IInteracttable
     [SerializeField] private Transform keyHole;
     [SerializeField] private Ease ease;
     [SerializeField] private float duration;
+    
+    public float ignitionShakeMagnitude = 0.05f;
 
     public float minTime = 2f;
     public float maxTime = 5f;
@@ -29,7 +31,7 @@ public class Ignishen : MonoBehaviour, IInteracttable
 
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, -90), duration).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 90), duration).SetAutoKill(true).SetEase(ease);
-        CarCameraShake.Instance.StartLoopShake(0.01f);
+        CarCameraShake.Instance.StartLoopShake(ignitionShakeMagnitude);
     }
 
     public void OnEndInteract()
@@ -39,6 +41,11 @@ public class Ignishen : MonoBehaviour, IInteracttable
 
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, 0), 0.5f).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 0), 0.5f).SetAutoKill(true).SetEase(ease);
+
+        if (!CarController.Instance.EngineOn)
+        {
+            CarCameraShake.Instance.StopLoopShake();
+        }
     }
 
     public void OnHover()
@@ -68,6 +75,5 @@ public class Ignishen : MonoBehaviour, IInteracttable
         IntroCutscene.Instance.EndIntro();
         CarController.Instance.OnToggleEngine(true);
         Debug.Log("Ignition started");
-        CarCameraShake.Instance.StartLoopShake(0.005f);
     }
 }

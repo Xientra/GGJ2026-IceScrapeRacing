@@ -21,6 +21,9 @@ public class FrozenScreenHandler : MonoBehaviour
     public float maxIceRegrowthNeighbourFactor;
     public float iceRegrowthNeighbourTreshold = 0.5f;
     
+    [Header("Mouse controlls")]
+    public float mouseDeltaThreshold = 0.001f;
+    
     private InputSystem_Actions _input;
     private Camera _camera;
     private int _kernel;
@@ -79,6 +82,10 @@ public class FrozenScreenHandler : MonoBehaviour
         Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
         bool scraping = _input.Player.Scrape.IsPressed();
 
+        Debug.Log(Mouse.current.delta.ReadValue().sqrMagnitude);
+
+        scraping = Mouse.current.delta.ReadValue().sqrMagnitude < mouseDeltaThreshold ? false : true;
+        
         computeShader.SetBool("scraping", scraping);
         Vector2 windowUV = GetWindowUV(mousePos);
 

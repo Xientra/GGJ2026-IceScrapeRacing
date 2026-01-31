@@ -1,37 +1,83 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FrozenScreenHandler : MonoBehaviour
 {
+    public LayerMask windowLayer;
     public ComputeShader computeShader;
     public RenderTexture renderTexture;
-    public int circleSize = 64;
 
-    int kernel;
+    public Texture scrapeMask;
+    
+    [Range(0.0f, 1.0f)]
+    public float scrapeSize = 0.01f;
+
+
+    public float clearStrength = 0.001f;
+    public float iceRegrowth = 0.0001f;
+
+    private Camera _camera;
+    private int _kernel;
+    private Vector2 _mousePostLastFrame;
 
     private void Start()
     {
-        kernel = computeShader.FindKernel("CSMain");
+        _camera = Camera.main;
+        _kernel = computeShader.FindKernel("CSMain");
+        computeShader.SetTexture(_kernel, "Result", renderTexture);
 
-        computeShader.SetTexture(kernel, "Result", renderTexture);
-        computeShader.SetInt("resolution", renderTexture.width);
-        computeShader.SetInt("circleSize", -1);
-
-        // pass floats explicitly (use height if needed)
-        computeShader.SetFloats("mousePosition", renderTexture.width * 0.5f, renderTexture.width * 0.5f);
+        SetShaderVariables();
+        ClearRenderTexture();
     }
 
-    [ContextMenu("DoStep")]
-    private void Update()
-    //private void Update()
+    private void OnDestroy()
     {
-        if (circleSize <= 0 || circleSize > renderTexture.width)
+        ClearRenderTexture();
+    }
+
+    private void ClearRenderTexture()
+    {
+        RenderTexture.active = renderTexture;
+        GL.Clear(true, true, Color.white);
+        RenderTexture.active = null;
+    }
+
+    private void SetShaderVariables()
+    {
+        computeShader.SetInts("resolution", renderTexture.width, renderTexture.height);
+        computeShader.SetFloat("scrapeSize", scrapeSize);
+        computeShader.SetFloat("clearStrength", clearStrength);
+        computeShader.SetFloat("iceRegrowth", iceRegrowth);
+        computeShader.SetTexture(_kernel, "ScrapeMask", scrapeMask);
+    }
+
+    private Vector2 GetWindowUV(Vector2 mousePos)
+    {
+        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100, windowLayer))
         {
-            circleSize = 1;
+            Debug.DrawRay(_camera.ScreenPointToRay(mousePos).origin, _camera.ScreenPointToRay(mousePos).direction * 12, Color.blue);
+            return hit.textureCoord;
         }
 
-        Debug.Log("Hi");
+        return Vector2.zero;
+    }
 
-        computeShader.SetInt("circleSize", circleSize);
-        computeShader.Dispatch(kernel, renderTexture.width, renderTexture.height, 1);
+    private void Update()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        bool scraping = Mouse.current.leftButton.ReadValue() > 0.01f;
+
+        computeShader.SetBool("scraping", scraping);
+        Vector2 windowUV = GetWindowUV(mousePos);
+
+        //if (!scraping || _mousePostLastFrame == mousePos)
+        //    return;
+        //_mousePostLastFrame = mousePos;
+
+        SetShaderVariables();
+        computeShader.SetFloats("scrapeUV", windowUV.x, windowUV.y);
+
+        computeShader.Dispatch(_kernel, renderTexture.width, renderTexture.height, 1);
     }
 }

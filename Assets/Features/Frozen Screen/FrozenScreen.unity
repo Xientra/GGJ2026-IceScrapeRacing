@@ -131,9 +131,8 @@ GameObject:
   - component: {fileID: 624284473}
   - component: {fileID: 624284472}
   - component: {fileID: 624284471}
-  - component: {fileID: 624284475}
-  m_Layer: 0
-  m_Name: FrozenScreen
+  m_Layer: 6
+  m_Name: CarWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,27 +226,12 @@ Transform:
   m_GameObject: {fileID: 624284470}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 0.1203, y: 1.2029, z: -0}
+  m_LocalScale: {x: 17.76634, y: 8.408655, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624284475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624284470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 231dd4576522e7941b5d149276d9069e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FrozenScreenHandler
-  computeShader: {fileID: 7200000, guid: 982ef684b92ed6a4a9d327a42643556e, type: 3}
-  renderTexture: {fileID: 8400000, guid: 92e6091329d049d459cbfecb55c3d242, type: 2}
-  circleSize: 15
 --- !u!1 &713360024
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +243,7 @@ GameObject:
   - component: {fileID: 713360026}
   - component: {fileID: 713360025}
   m_Layer: 0
-  m_Name: Frozen Screen
+  m_Name: Frozen Screen Scraper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,9 +261,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231dd4576522e7941b5d149276d9069e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrozenScreenHandler
+  windowLayer:
+    serializedVersion: 2
+    m_Bits: 64
   computeShader: {fileID: 7200000, guid: 982ef684b92ed6a4a9d327a42643556e, type: 3}
   renderTexture: {fileID: 8400000, guid: b95a2bf187131b74493a7b363d788f4f, type: 2}
-  circleSize: 64
+  scrapeMask: {fileID: 2800000, guid: 877f05d48249e8e499fda767e75f7d05, type: 3}
+  scrapeSize: 0.1
+  clearStrength: 0.001
+  iceRegrowth: 0
 --- !u!4 &713360026
 Transform:
   m_ObjectHideFlags: 0
@@ -644,6 +634,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1815111362}
   - {fileID: 1715975812}
-  - {fileID: 713360026}
   - {fileID: 1348271620}
   - {fileID: 624284474}
+  - {fileID: 713360026}

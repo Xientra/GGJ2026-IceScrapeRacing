@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &19771624 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3624058348785377390, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+  m_PrefabInstance: {fileID: 1714871933404388058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &276916597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3631308747106816576, guid: 855c0379c06e14d47b4471a8deff8b6d, type: 3}
@@ -498,6 +503,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 955291224822106155, guid: 5e08d2b2c2ddd5b4b86f93c2479ee5e6, type: 3}
   m_PrefabInstance: {fileID: 810441213}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1285481804 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2115835135520094912, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+  m_PrefabInstance: {fileID: 1714871933404388058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916298191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8630963740670724324, guid: 855c0379c06e14d47b4471a8deff8b6d, type: 3}
@@ -584,6 +594,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3331077171488771532, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+      propertyPath: noramleCameraPos
+      value: 
+      objectReference: {fileID: 1285481804}
+    - target: {fileID: 3331077171488771532, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+      propertyPath: scrapingCameraPos
+      value: 
+      objectReference: {fileID: 19771624}
+    - target: {fileID: 3331077171488771532, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+      propertyPath: cameraAnimatonEase
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331077171488771532, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+      propertyPath: cameraAnimatonDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331077171488771532, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
+      propertyPath: mouseSensivityMuliplayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3581504196742536753, guid: eb90c37fc79e4044db49f6f95430317d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1,15 +1,17 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
 # Rider ignored files
 /projectSettingsUpdater.xml
-/contentModel.xml
-/.idea.GGJ2026-IceScrapeRacing.iml
 /modules.xml
-# Ignored default folder with query files
-/queries/
+/.idea.GGJ2026-IceScrapeRacing.iml
+/contentModel.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
+

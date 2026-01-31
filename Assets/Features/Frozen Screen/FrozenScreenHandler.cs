@@ -17,12 +17,16 @@ public class FrozenScreenHandler : MonoBehaviour
     public float clearStrength = 0.001f;
     public float iceRegrowth = 0.0001f;
 
+    private InputSystem_Actions _input;
     private Camera _camera;
     private int _kernel;
     private Vector2 _mousePostLastFrame;
 
     private void Start()
     {
+        _input = new InputSystem_Actions();
+        _input.Enable();
+        
         _camera = Camera.main;
         _kernel = computeShader.FindKernel("CSMain");
         computeShader.SetTexture(_kernel, "Result", renderTexture);
@@ -65,8 +69,8 @@ public class FrozenScreenHandler : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        bool scraping = Mouse.current.leftButton.ReadValue() > 0.01f;
+        Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
+        bool scraping = _input.Player.Scrape.IsPressed();
 
         computeShader.SetBool("scraping", scraping);
         Vector2 windowUV = GetWindowUV(mousePos);

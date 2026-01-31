@@ -70,6 +70,7 @@ namespace Features.BrumBrum
             //   Debug.Log($"forAccel: {forwardAccel}, VelRel: {curVel01} Accel: {accel}");
 
             Vector3 forwardForceDir = forwardAccel * this.transform.forward;
+            forwardForceDir.y = 0;
 
             this._rb.AddForce(forwardForceDir, ForceMode.Acceleration);
 
@@ -79,7 +80,9 @@ namespace Features.BrumBrum
         {
             if (this._rb.linearVelocity.sqrMagnitude > 0.1)
             {
-                float turn = this._move.x * carTurn * curVel01;
+                int dirMul = this._move.y < 0 ? -1 : 1;
+                
+                float turn = this._move.x * carTurn * curVel01 * dirMul;
                 Vector3 turnDir = Vector3.up * turn;
                 this._rb.AddTorque(turnDir);   
             }

@@ -884,6 +884,38 @@ MonoBehaviour:
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
+--- !u!1 &5896839919512952704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7328694251292596686}
+  m_Layer: 0
+  m_Name: "R\xFCckspe"
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7328694251292596686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896839919512952704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.676, y: 2.869, z: 0.427}
+  m_LocalScale: {x: 0.74698377, y: 0.74698377, z: 0.74698377}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1017755204382166258}
+  m_Father: {fileID: 3555815039010891302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6564186510705164136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1300,72 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.019999998, z: 7.105427e-17}
   m_Center: {x: 0, y: 0, z: -3.5527136e-17}
+--- !u!1001 &690585155206408985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7328694251292596686}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6733177361254619370, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+      propertyPath: m_Name
+      value: "r\xFCckspiegel mit wunderbaum"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+--- !u!4 &1017755204382166258 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d4f4acbcd08b854cb659fa2aea088f4, type: 3}
+  m_PrefabInstance: {fileID: 690585155206408985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3950346873683902925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1415,6 +1513,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7328694251292596686}
     - targetCorrespondingSourceObject: {fileID: -6976466409580541561, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4620178938635040583}
@@ -1820,6 +1921,10 @@ PrefabInstance:
       objectReference: {fileID: 4620178938635040583}
     - target: {fileID: 5796168124283764244, guid: 855c0379c06e14d47b4471a8deff8b6d, type: 3}
       propertyPath: handPos
+      value: 
+      objectReference: {fileID: 7148918467563198624}
+    - target: {fileID: 5824600607323060550, guid: 855c0379c06e14d47b4471a8deff8b6d, type: 3}
+      propertyPath: handTagetTransform
       value: 
       objectReference: {fileID: 7148918467563198624}
     - target: {fileID: 8958980062595323097, guid: 855c0379c06e14d47b4471a8deff8b6d, type: 3}

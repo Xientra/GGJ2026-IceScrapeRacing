@@ -6,12 +6,14 @@ RWTexture2D<float4> Result;
 Texture2D<float4> ScrapeMask;
 SamplerState samplerScrapeMask; // this is automatically declared when the texture is set
 
-
 // variables
 int2 resolution;
 float scrapeSize;
 float clearStrength;
 float iceRegrowth;
+float iceRegrowthNeighbourFactor;
+float iceRegrowthNeighbourThreshold;
+float maxIceRegrowthNeighbourFactor;
 
 // active input
 float2 scrapeUV;
@@ -22,9 +24,12 @@ float deltaTime;
 [numthreads(1,1,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    float clear = 1.0f;
     if (scraping == false)
-        clear = 0.0f;
+    {
+        return;
+    }
+    
+    float clear = 1.0f;
 
     float mx = max(resolution.x, resolution.y);
     float2 uv_mx = id.xy / mx;
@@ -38,9 +43,43 @@ void CSMain (uint3 id : SV_DispatchThreadID)
 
     float currentIce = Result[id.xy].w;
     float4 s = ScrapeMask.SampleLevel(samplerScrapeMask, scrapeMaskUV, 0);
-
+    
+    float currentIceRegrowth = iceRegrowth;
+    
+    int2 coord = int2(id.xy);
+    
+    int2 rightNeighbour  = coord + int2(1, 1);
+    int2 leftNeighbour   = coord + int2(-1, 1);
+    int2 topNeighbour    = coord + int2(1, -1);
+    int2 bottomNeighbour = coord + int2(-1, -1);
+    
+    // int2 rightNeighbour  = coord + int2(1, 0);
+    // int2 leftNeighbour   = coord + int2(-1, 0);
+    // int2 topNeighbour    = coord + int2(0, 1);
+    // int2 bottomNeighbour = coord + int2(0, -1);
+    
+    rightNeighbour  = clamp(rightNeighbour,  0, resolution - 1);
+    leftNeighbour   = clamp(leftNeighbour,   0, resolution - 1);
+    topNeighbour    = clamp(topNeighbour,    0, resolution - 1);
+    bottomNeighbour = clamp(bottomNeighbour, 0, resolution - 1);
+    
+    if (Result[rightNeighbour].w > iceRegrowthNeighbourThreshold)
+        currentIceRegrowth += iceRegrowthNeighbourFactor;
+    
+    if (Result[leftNeighbour].w > iceRegrowthNeighbourThreshold)
+        currentIceRegrowth += iceRegrowthNeighbourFactor;
+    
+    if (Result[topNeighbour].w > iceRegrowthNeighbourThreshold)
+        currentIceRegrowth += iceRegrowthNeighbourFactor;
+    
+    if (Result[bottomNeighbour].w > iceRegrowthNeighbourThreshold)
+        currentIceRegrowth += iceRegrowthNeighbourFactor;
+    
+    if (currentIceRegrowth > maxIceRegrowthNeighbourFactor)
+        currentIceRegrowth = maxIceRegrowthNeighbourFactor;
+    
     if (currentIce < 1.0f)
-        currentIce += iceRegrowth * deltaTime; 
+        currentIce += currentIceRegrowth * deltaTime; 
     
     currentIce -= clear * s * clearStrength;
     Result[id.xy] = float4(1.0f, 1.0f, 1.0f, currentIce);

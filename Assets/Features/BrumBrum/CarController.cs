@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -26,12 +27,18 @@ namespace Features.BrumBrum
 
         [Header("Collision")] [SerializeField] private float crashSqrImpulseThreshold = 100;
         [SerializeField] private float crashDuration = 2.5f;
+        [SerializeField] private int crashesTilSmoke = 2;
         
+        // Sound
+        [Header("Audio")]
+        [SerializeField] private AudioSource engineAudio;
+        [SerializeField] private AudioSource crashAudio;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
         private bool _engineOn = false;
         private bool _engineBroken = false;
+        private int _currentCrashes = 0;
 
         private void Awake()
         {
@@ -61,6 +68,7 @@ namespace Features.BrumBrum
 
         private void FixedUpdate()
         {
+            SaveCar();
             // don't scrape and drive
             if (this._input.Player.Scrape.IsPressed() || !this._engineOn) return;
             
@@ -68,6 +76,8 @@ namespace Features.BrumBrum
             float curVel01 = Mathf.Clamp01(curVel / maxCarVelocity);
             AddSteering(curVel01);
             AddDrivingForce(curVel01);
+
+            this.engineAudio.pitch = curVel01;
         }
 
         private void AddDrivingForce(float curVel01)
@@ -99,15 +109,57 @@ namespace Features.BrumBrum
             }
         }
 
+        private void SaveCar()
+        {
+            // save rotation
+            Vector3 euler = transform.eulerAngles;
+            float tiltX = Mathf.Abs(Mathf.DeltaAngle(euler.x, 0f));
+            float tiltZ = Mathf.Abs(Mathf.DeltaAngle(euler.z, 0f));
+            
+            Quaternion targetRot = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+            if (tiltX > 5f || tiltZ > 5f)
+            {
+                this.transform.rotation = Quaternion.Slerp(_rb.rotation, targetRot, 0.5f);
+            } else if (tiltX is <= 5f and > 0|| tiltZ is <= 5f and > 0)
+            {
+                this.transform.rotation = targetRot;
+            }
+
+            // save position
+            
+            Vector3 targetPos = this.transform.position;
+            targetPos.y = 0.25f;
+            if (Mathf.Abs(this.transform.position.y) > 0.5f)
+            {
+                this.transform.position = Vector3.Lerp(this.transform.position,
+                    targetPos, 0.5f);
+            } else if (this.transform.position.y is <= 0.5f and > 0)
+            {
+                this.transform.position = targetPos;
+            }
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (other.impulse.sqrMagnitude > this.crashSqrImpulseThreshold)
             {
                 UnityEngine.Debug.Log("crash");
+                //sound
+                float randPitch = Random.Range(0.5f, 1.5f);
+                this.crashAudio.pitch = randPitch;
+                this.crashAudio.Play();
+                
+                // stop engine
                 this._engineOn = false;
                 OnEngineToggle?.Invoke(_engineOn);
-                this._engineBroken = true;
-                OnEngineBroken?.Invoke(_engineBroken);
+                
+                // life handling
+                this._currentCrashes++;
+                if (this._currentCrashes == this.crashesTilSmoke)
+                {
+                    this._engineBroken = true;
+                    OnEngineBroken?.Invoke(_engineBroken);
+                }
 
             }
         }
@@ -115,6 +167,14 @@ namespace Features.BrumBrum
         public void OnToggleEngine(bool on)
         {
             this._engineOn = on;
+            if (on)
+            {
+                this.engineAudio.Play();
+            }
+            else
+            {
+                this.engineAudio.Stop();
+            }
         }
     }
 }

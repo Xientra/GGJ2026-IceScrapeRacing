@@ -8,10 +8,12 @@ public class Tacho : MonoBehaviour
     [SerializeField] private Transform tachoNeedle;
     [SerializeField] private int startAngle = 90;
     [SerializeField] private Rigidbody carRigidBody;
+    [SerializeField] private float maxMagnitude = 5;
     private void Update()
     {
         tachoMeter = carRigidBody.linearVelocity.magnitude;
+        float normalized = Mathf.InverseLerp(0f, maxMagnitude, tachoMeter);
         
-        tachoNeedle.localRotation = Quaternion.Euler(0, 0, (-tachoMeter * maxAngle) - startAngle);
+        tachoNeedle.localRotation = Quaternion.Euler(0, 0, (-normalized * maxAngle) - startAngle);
     }
 }

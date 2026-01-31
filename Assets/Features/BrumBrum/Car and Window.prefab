@@ -343,6 +343,10 @@ PrefabInstance:
       propertyPath: engineAudio
       value: 
       objectReference: {fileID: 7307497708485310124}
+    - target: {fileID: 8403474774529160870, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: maxMagnitude
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

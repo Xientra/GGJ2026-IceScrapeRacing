@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b01d3987abb3544869e95f08a3d9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHold
-  holdTime: 2
   minTime: 2
   maxTime: 5
   OnEngineToggle:
@@ -849,7 +848,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8497008051825297657}
-  - component: {fileID: 7983248617391867327}
   m_Layer: 5
   m_Name: Time Stuff Anchor
   m_TagString: Untagged
@@ -876,19 +874,6 @@ RectTransform:
   m_AnchoredPosition: {x: 345, y: -147.82}
   m_SizeDelta: {x: 670.37, y: 295.64}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7983248617391867327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5277704476025270838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6235adb3fcbbf9d4b8e015191e2706a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeUI
-  timeLabel: {fileID: 0}
 --- !u!1 &5292427153459844457
 GameObject:
   m_ObjectHideFlags: 0

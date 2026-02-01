@@ -246,12 +246,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7115286002596278406, guid: e65b292f508509f41a7dcb5d027b5a0e, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0.17453292
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115286002596278406, guid: e65b292f508509f41a7dcb5d027b5a0e, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7115286002596278406, guid: e65b292f508509f41a7dcb5d027b5a0e, type: 3}
       propertyPath: InheritVelocityModule.m_Curve.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115286002596278406, guid: e65b292f508509f41a7dcb5d027b5a0e, type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: -0.17453292
       objectReference: {fileID: 0}
     - target: {fileID: 7115286002596278406, guid: e65b292f508509f41a7dcb5d027b5a0e, type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar

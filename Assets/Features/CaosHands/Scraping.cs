@@ -16,8 +16,11 @@ public class Scraping : MonoBehaviour
     private Camera _camera;
 
     public Transform cameraParent;
-    
 
+
+    [SerializeField]
+    private ParticleSystem scrapeParticles;
+    
     void Start()
     {
         _input = new InputSystem_Actions();
@@ -61,6 +64,8 @@ public class Scraping : MonoBehaviour
                 .SetEase(cameraAnimatonEase);
             cameraParent.DOLocalRotate(scrapingCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
+            
+            //scrapeParticles.Play();
         }
 
         bool wasRealeasedThisFrame = _input.Player.Scrape.WasReleasedThisFrame();
@@ -71,6 +76,8 @@ public class Scraping : MonoBehaviour
                 .SetEase(cameraAnimatonEase);
             cameraParent.DOLocalRotate(noramleCameraPos.localRotation.eulerAngles, cameraAnimatonDuration).SetAutoKill(true)
                 .SetEase(cameraAnimatonEase);
+            
+            //scrapeParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 

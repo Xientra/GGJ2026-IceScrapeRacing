@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c47f3957f04bb1849aec25346a303c3c
+guid: 577a092f9d0c49347bff2db52cc90ffb
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,33 +7,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Border
-    second: {fileID: 2100000, guid: 9b0d42f28f9d643449f70d6e11ce5843, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 7c43fe20957c727469a1d685c91923d7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Border.001
-    second: {fileID: 2100000, guid: b9b6701b02d96104c858b1cc933bae7c, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: 3498777031b59c14ebddfb76b4fc1a3a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grau
-    second: {fileID: 2100000, guid: e6d8f8cce074b4246b0e08da2db5ad0a, type: 2}
+      name: Material.004
+    second: {fileID: 2100000, guid: f61e525ca4e7f2f40bf7f8c05b64174f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Snow
-    second: {fileID: 2100000, guid: 199cf7905c794824bbda850eeba9ddc8, type: 2}
+      name: Material.005
+    second: {fileID: 2100000, guid: 8d5c394705ffbc244ba61206d2b54423, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Street.002
-    second: {fileID: 2100000, guid: 405d9f5509829dc40b64cc077e12117f, type: 2}
+      name: Material.007
+    second: {fileID: 2100000, guid: d1e13451bff87f0408a93c77d94edd63, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Weiss
-    second: {fileID: 2100000, guid: 996da7e77b18b0747b3160bfbfca93ff, type: 2}
+      name: Material.008
+    second: {fileID: 2100000, guid: e066fff364de3b94fb94d8693c63e736, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leuchtrot
+    second: {fileID: 2100000, guid: af122e132da2aa74fb84419c86d0ac3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schnee
+    second: {fileID: 2100000, guid: 4953ebe9e8717ff4ba444de6356bb0cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schnee.001
+    second: {fileID: 2100000, guid: db5d7f211e41c16458c9a83fb9aa05e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schnee.002
+    second: {fileID: 2100000, guid: 6ecf2c5fa07df9b498e8baeb157bc58e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -63,7 +83,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -121,7 +141,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 5
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

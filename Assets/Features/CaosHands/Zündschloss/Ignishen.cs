@@ -78,6 +78,8 @@ public class Ignishen : MonoBehaviour, IInteracttable
         }
     }
 
+    private bool doOnce = false;
+
     private void OnIgnitionStarted()
     {
         IntroCutscene.Instance.EndIntro();
@@ -85,6 +87,12 @@ public class Ignishen : MonoBehaviour, IInteracttable
         smokeVFX.Stop();
         outline.enabled = false;
         Debug.Log("Ignition started");
+
+        if (!doOnce)
+        {
+            GameManager.Instance.StartGame();
+            doOnce = true;
+        }
     }
     
     public void StartSmoke(bool value)

@@ -57,6 +57,10 @@ public class Ignishen : MonoBehaviour, IInteracttable
     {
     }
 
+    public void EndOnHover()
+    {
+    }
+
 
     private void Update()
     {

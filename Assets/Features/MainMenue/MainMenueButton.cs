@@ -26,4 +26,9 @@ public class MainMenueButton : MonoBehaviour, IInteracttable
     {
         hightLightTra.gameObject.SetActive(true);
     }
+
+    public void EndOnHover()
+    {
+        hightLightTra.gameObject.SetActive(false);
+    }
 }

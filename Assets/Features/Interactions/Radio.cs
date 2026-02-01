@@ -30,11 +30,16 @@ public class Radio : MonoBehaviour, IInteracttable
 
     public void OnEndInteract()
     {
-        throw new NotImplementedException();
+       
     }
 
     public void OnHover()
     {
        
+    }
+
+    public void EndOnHover()
+    {
+        
     }
 }

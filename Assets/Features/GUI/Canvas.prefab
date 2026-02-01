@@ -1060,7 +1060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -165}
+  m_AnchoredPosition: {x: 448, y: -165}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3471524379901411224
@@ -1238,8 +1238,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1589208730181467196}
-  - component: {fileID: 4726168212417773448}
-  - component: {fileID: 783783748912672367}
+  - component: {fileID: 1629736264470850128}
+  - component: {fileID: 7092750998229740791}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -1266,7 +1266,7 @@ RectTransform:
   m_AnchoredPosition: {x: -316, y: -170}
   m_SizeDelta: {x: 254.66667, y: 126.333336}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4726168212417773448
+--- !u!222 &1629736264470850128
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1274,7 +1274,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3737540655384011942}
   m_CullTransparentMesh: 1
---- !u!114 &783783748912672367
+--- !u!114 &7092750998229740791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -36,6 +36,7 @@ public class Ignishen : MonoBehaviour, IInteracttable
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, -90), duration).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 90), duration).SetAutoKill(true).SetEase(ease);
         CarCameraShake.Instance.StartLoopShake(ignitionShakeMagnitude);
+        IntroCutscene.Instance.KillAnimation();
         
         ignitionAudio.PlayOneShot(ignitionClip,  ignitionVolume);
     }

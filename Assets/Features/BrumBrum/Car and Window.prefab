@@ -149,6 +149,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7707889877865859327}
     m_Modifications:
+    - target: {fileID: 2537910850563406794, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.b
+      value: 0.93011117
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537910850563406794, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.g
+      value: 0.90466136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537910850563406794, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.r
+      value: 0.87136734
+      objectReference: {fileID: 0}
     - target: {fileID: 4153243631162436604, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -192,6 +204,22 @@ PrefabInstance:
     - target: {fileID: 5401050537050658893, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
       propertyPath: m_Name
       value: BrumBrum
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401050537050658893, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427090056471241423, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.b
+      value: 0.93011117
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427090056471241423, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.g
+      value: 0.90466136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427090056471241423, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: outlineParameters.color.r
+      value: 0.87136734
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

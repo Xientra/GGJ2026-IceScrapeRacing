@@ -200,6 +200,7 @@ namespace Features.BrumBrum
                 this.engineAudio.Stop();
                 StartCoroutine(CrashShake());
             }
+            LightsOutManager.instancce.TurnTheLightsWhatever(on);
         }
         
         private IEnumerator CrashShake()

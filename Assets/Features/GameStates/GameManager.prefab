@@ -48,7 +48,7 @@ MonoBehaviour:
   <GameIsRunning>k__BackingField: 0
   timeInSeconds: 180
   inUniverseTimeInSeconds: 1800
-  startHour: 8
+  startHour: 9
   startMinutes: 30
 --- !u!1 &6639306041971579305
 GameObject:

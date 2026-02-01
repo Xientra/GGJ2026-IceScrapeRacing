@@ -24,6 +24,7 @@ public class MoveMatGlow : MonoBehaviour
 
     public void SwitchOnOff(bool on)
     {
+        /*
         if (on == false)
         {
             Color c = _mat.GetColor("_EmissionColor");
@@ -38,6 +39,7 @@ public class MoveMatGlow : MonoBehaviour
                 c.a = Mathf.Lerp(offIntensity, onIntensity, f);
                 _mat.SetColor("_EmissionColor", c);
             });
+        */
     }
 
 }

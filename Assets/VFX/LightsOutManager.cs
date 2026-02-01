@@ -25,6 +25,8 @@ public class LightsOutManager : MonoBehaviour
 
     public void TurnTheLightsWhatever(bool on)
     {
+        FindAnyObjectByType<Radio>().GetComponent<AudioSource>().volume = on ? 1.0f : 0.4f;
+        
         foreach (LightSwitch l in lights)
         {
             l.SwitchLightOnOff(on);

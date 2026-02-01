@@ -1575,6 +1575,18 @@ PrefabInstance:
       value: -44.667
       objectReference: {fileID: 0}
     - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.2688541
+      objectReference: {fileID: 0}
+    - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.2688541
+      objectReference: {fileID: 0}
+    - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.2688541
+      objectReference: {fileID: 0}
+    - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8358
       objectReference: {fileID: 0}
@@ -1601,6 +1613,10 @@ PrefabInstance:
     - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 42.947
+      objectReference: {fileID: 0}
+    - target: {fileID: -7311148678455977809, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 219365922571008851, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -1690,7 +1706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc28fb390e7859c46b30f63a562b9d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Radio
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: e26530a295917fb4b8659fcb80f4b9f6, type: 3}
+  - {fileID: 8300000, guid: c8893a0e320f4a04fbfab30671a9ddd4, type: 3}
   redButton: {fileID: 3196401858529827170}
   radioAudioSource: {fileID: 1352714555708187739}
   pressOffset: 0.03

@@ -34,6 +34,7 @@ public class CarCameraShake : MonoBehaviour
         else
         {
             // Reset to initial position
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, Time.deltaTime * smoothing);
             transform.localPosition = Vector3.Lerp(transform.localPosition, initialPosition, Time.deltaTime * smoothing);
         }
     }

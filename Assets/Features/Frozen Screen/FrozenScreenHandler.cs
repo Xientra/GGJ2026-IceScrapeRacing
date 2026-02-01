@@ -9,6 +9,7 @@ public class FrozenScreenHandler : MonoBehaviour
     public RenderTexture renderTexture;
 
     public Texture scrapeMask;
+    public Texture scrapeEdgeMask;
     
     [Range(0.0f, 1.0f)]
     public float scrapeSize = 0.01f;
@@ -64,6 +65,7 @@ public class FrozenScreenHandler : MonoBehaviour
         computeShader.SetFloat("iceRegrowthNeighbourThreshold", iceRegrowthNeighbourTreshold);
         computeShader.SetFloat("maxIceRegrowthNeighbourFactor", maxIceRegrowthNeighbourFactor);
         computeShader.SetTexture(_kernel, "ScrapeMask", scrapeMask);
+        computeShader.SetTexture(_kernel, "ScrapeEdgeMask", scrapeEdgeMask);
     }
 
     private Vector2 GetWindowUV(Vector2 mousePos)

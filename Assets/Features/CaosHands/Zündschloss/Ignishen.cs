@@ -1,7 +1,7 @@
+using System.Collections;
 using DG.Tweening;
 using Features.BrumBrum;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Ignishen : MonoBehaviour, IInteracttable
 {
@@ -12,17 +12,18 @@ public class Ignishen : MonoBehaviour, IInteracttable
     
     public float ignitionShakeMagnitude = 0.05f;
 
-    public float minTime = 2f;
-    public float maxTime = 5f;
-    private float randomTime;
+    public float ignitionTime;
+
+    public ParticleSystem smokeVFX;
+
+    [Header("Audio")] 
+    public AudioClip ignitionClip;
+    public AudioSource ignitionAudio;
+    public float ignitionVolume = 1f;
 
     private bool isHolding = false;
     private float holdTimer = 0f;
-
-    private void Start()
-    {
-        randomTime = Random.Range(minTime, maxTime);
-    }
+    
 
     public void OnInteract()
     {
@@ -32,6 +33,8 @@ public class Ignishen : MonoBehaviour, IInteracttable
         key.DOLocalRotateQuaternion(Quaternion.Euler(0, 0, -90), duration).SetAutoKill(true).SetEase(ease);
         keyHole.DOLocalRotateQuaternion(Quaternion.Euler(-180, 0, 90), duration).SetAutoKill(true).SetEase(ease);
         CarCameraShake.Instance.StartLoopShake(ignitionShakeMagnitude);
+        
+        ignitionAudio.PlayOneShot(ignitionClip,  ignitionVolume);
     }
 
     public void OnEndInteract()
@@ -46,6 +49,8 @@ public class Ignishen : MonoBehaviour, IInteracttable
         {
             CarCameraShake.Instance.StopLoopShake();
         }
+        
+        ignitionAudio.Stop();
     }
 
     public void OnHover()
@@ -59,11 +64,10 @@ public class Ignishen : MonoBehaviour, IInteracttable
         {
             holdTimer += Time.deltaTime;
 
-            if (holdTimer >= randomTime)
+            if (holdTimer >= ignitionTime)
             {
                 isHolding = false;
                 holdTimer = 0f;
-                randomTime = Random.Range(minTime, maxTime);
                 OnIgnitionStarted();
                 OnEndInteract();
             }
@@ -74,6 +78,13 @@ public class Ignishen : MonoBehaviour, IInteracttable
     {
         IntroCutscene.Instance.EndIntro();
         CarController.Instance.OnToggleEngine(true);
+        smokeVFX.Stop();
         Debug.Log("Ignition started");
+    }
+    
+    public void StartSmoke(bool value)
+    {
+        if(!value)
+            smokeVFX.Play();
     }
 }

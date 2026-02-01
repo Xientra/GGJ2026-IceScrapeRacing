@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -42,6 +43,7 @@ namespace Features.BrumBrum
 
         [Header("Other")] 
         [SerializeField] private float ignitionShakeMagnitude = 0.01f;
+        [SerializeField] private float crashShakeMagnitude = 0.1f;
 
         // gameplay vars
         private Vector2 _move = Vector2.zero;
@@ -196,8 +198,15 @@ namespace Features.BrumBrum
             else
             {
                 this.engineAudio.Stop();
-                CarCameraShake.Instance.StopLoopShake();
+                StartCoroutine(CrashShake());
             }
+        }
+        
+        private IEnumerator CrashShake()
+        {
+            CarCameraShake.Instance.StartLoopShake(crashShakeMagnitude);
+            yield return new WaitForSeconds(0.1f);
+            CarCameraShake.Instance.StopLoopShake();
         }
     }
 }

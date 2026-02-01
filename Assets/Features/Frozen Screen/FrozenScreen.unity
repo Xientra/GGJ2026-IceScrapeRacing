@@ -542,10 +542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6240076690896945284, guid: 976bb646f00467b458526d6443dff366, type: 3}
-      propertyPath: scrapeEdgeMask
-      value: 
-      objectReference: {fileID: 2800000, guid: 1935f0cd661319747ba9d5f9c7ee725c, type: 3}
     - target: {fileID: 6471664020454942624, guid: 976bb646f00467b458526d6443dff366, type: 3}
       propertyPath: m_Name
       value: CarWindow

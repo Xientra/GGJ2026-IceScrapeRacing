@@ -1,6 +1,5 @@
 using System.Collections;
 using DG.Tweening;
-using EPOOutline;
 using Features.BrumBrum;
 using UnityEngine;
 
@@ -16,8 +15,6 @@ public class Ignishen : MonoBehaviour, IInteracttable
     public float ignitionTime;
 
     public ParticleSystem smokeVFX;
-
-    public Outlinable outline;
 
     [Header("Audio")] 
     public AudioClip ignitionClip;
@@ -82,7 +79,6 @@ public class Ignishen : MonoBehaviour, IInteracttable
         IntroCutscene.Instance.EndIntro();
         CarController.Instance.OnToggleEngine(true);
         smokeVFX.Stop();
-        outline.enabled = false;
         Debug.Log("Ignition started");
     }
     
@@ -90,11 +86,5 @@ public class Ignishen : MonoBehaviour, IInteracttable
     {
         if(!value)
             smokeVFX.Play();
-    }
-
-    public void ToggleOutline(bool value)
-    {
-        Debug.Log("Toogle outline : " + value);
-        outline.enabled = !value;
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4899069755826485}
   - component: {fileID: 5038614175978722312}
   - component: {fileID: 4382742703397937378}
-  - component: {fileID: 6594500696502450361}
   m_Layer: 0
   m_Name: Spot Light (2)
   m_TagString: Untagged
@@ -128,20 +127,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &6594500696502450361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890354334667382775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d24e432a8cec45428f284e965964e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightSwitch
-  duration: 1
-  onIntenstiy: 100
 --- !u!1 &3843161915358192733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,7 +5001,6 @@ GameObject:
   - component: {fileID: 580801284113216867}
   - component: {fileID: 7720622313803681486}
   - component: {fileID: 5231107932142044975}
-  - component: {fileID: 1861370136496660768}
   m_Layer: 0
   m_Name: Spot Light (3)
   m_TagString: Untagged
@@ -5133,20 +5117,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &1861370136496660768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4228933720574146138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d24e432a8cec45428f284e965964e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightSwitch
-  duration: 1
-  onIntenstiy: 100
 --- !u!1 &7143544664276020163
 GameObject:
   m_ObjectHideFlags: 0

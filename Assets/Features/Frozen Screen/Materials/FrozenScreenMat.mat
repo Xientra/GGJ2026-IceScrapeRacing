@@ -53,6 +53,7 @@ Material:
     - _Smoothness: 0.5
     - _UseIceRenderTexture: 1
     m_Colors:
+    - _BorderColor: {r: 2.828427, g: 2.828427, b: 2.828427, a: 1}
     - _IceColor: {r: 1.5299724, g: 1.5382315, b: 1.538682, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

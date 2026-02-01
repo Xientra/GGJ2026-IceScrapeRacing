@@ -9,13 +9,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UII
   - Water
   - UI
   - Window
   - SmokeCollision
   - SnowCollision
-  - 
+  - Interactables
   - 
   - 
   - 

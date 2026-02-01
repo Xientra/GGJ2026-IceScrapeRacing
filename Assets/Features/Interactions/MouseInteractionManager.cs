@@ -6,6 +6,7 @@ public class MouseInteractionManager : MonoBehaviour
 {
     private  Camera _camera;
     private InputSystem_Actions _input;
+    public LayerMask mask;
     
     private Outlinable _lastOutlinable;
     private IInteracttable _lastInteracttable;
@@ -18,6 +19,9 @@ public class MouseInteractionManager : MonoBehaviour
         _input.Enable();
     }
 
+    private bool hoverTriggert ;
+    private IInteracttable lastHoverd; 
+
     private void Update()
     {
         Vector2 mousePos = _input.Player.MousePosition.ReadValue<Vector2>();
@@ -25,9 +29,10 @@ public class MouseInteractionManager : MonoBehaviour
         bool interacting = _input.Player.Interact.WasPressedThisFrame();
         bool endInteracting = _input.Player.Interact.WasReleasedThisFrame();
 
+        hoverTriggert = false;
         if(scraping) return;
         
-        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100))
+        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100,mask))
         {
             var interacttable = hit.collider.gameObject.GetComponent<IInteracttable>();
             if (interacting)
@@ -44,6 +49,7 @@ public class MouseInteractionManager : MonoBehaviour
             {
                 if(_lastInteracttable != null)
                 {
+                    _lastInteracttable.EndOnHover();
                     _lastInteracttable.OnEndInteract();
                     _lastInteracttable = null;
                 }
@@ -52,6 +58,8 @@ public class MouseInteractionManager : MonoBehaviour
             if(interacttable != null)
             {
                 interacttable.OnHover();
+                lastHoverd = interacttable;
+                hoverTriggert = true;
             }
             
             var outlinable = hit.collider.gameObject.GetComponent<Outlinable>();
@@ -73,10 +81,16 @@ public class MouseInteractionManager : MonoBehaviour
         else
         {
             
+            if(_lastInteracttable != null)
+            {
+                _lastInteracttable.EndOnHover();
+            }
+            
             if(endInteracting)
             {
                 if(_lastInteracttable != null)
                 {
+                    _lastInteracttable.EndOnHover();
                     _lastInteracttable.OnEndInteract();
                     _lastInteracttable = null;
                 }
@@ -88,6 +102,12 @@ public class MouseInteractionManager : MonoBehaviour
                 _lastOutlinable = null;
             }
         }
+
+        if (hoverTriggert == false && lastHoverd != null)
+        {
+            lastHoverd.EndOnHover();
+        }
+            
     }
 }
 
@@ -97,4 +117,5 @@ public interface IInteracttable
     public void OnEndInteract();
     
     public void OnHover();
+    public void EndOnHover();
 }

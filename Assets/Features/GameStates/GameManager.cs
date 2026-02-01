@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         GameIsRunning = true;
         _remainingTime = timeInSeconds;
+        Invoke(nameof(SwitchRadio), 30);
     }
 
     public void EndGame(bool playerWon)
@@ -64,5 +65,10 @@ public class GameManager : MonoBehaviour
         _remainingTime = 0;
         GameIsRunning = false;
         GameOver?.Invoke(this, playerWon);
+    }
+
+    public void SwitchRadio()
+    {
+        FindAnyObjectByType<Radio>().OnInteract();
     }
 }

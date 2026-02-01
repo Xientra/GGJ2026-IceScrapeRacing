@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: outlineParameters.color.r
       value: 0.87136734
       objectReference: {fileID: 0}
+    - target: {fileID: 7891617694013245819, guid: 7f49b884e23b78b479268b83d6e77ff9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

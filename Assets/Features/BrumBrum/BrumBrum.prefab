@@ -402,7 +402,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxSteering: 20
-  crashSqrImpulseThreshold: 100
+  crashSqrImpulseThreshold: 60
   crashDuration: 2.5
   crashesTilSmoke: 2
   engineAudio: {fileID: 3270524159842403032}

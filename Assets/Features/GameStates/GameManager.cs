@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         _remainingTime = timeInSeconds;
-        Invoke(nameof(SwitchRadio), 30);
     }
     
 
@@ -58,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         GameIsRunning = true;
         _remainingTime = timeInSeconds;
+        Invoke(nameof(SwitchRadio), 30);
     }
 
     public void EndGame(bool playerWon)

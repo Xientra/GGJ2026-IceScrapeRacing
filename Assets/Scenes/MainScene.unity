@@ -617,14 +617,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7660591444635701562}
     - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
       propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 369297494}
@@ -636,26 +628,6 @@ PrefabInstance:
       propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1553742721}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: set_enabled
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.CapsuleCollider, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637621323984449599, guid: 6f2e8b27673a3014ab6986d2c053fc24, type: 3}
-      propertyPath: OnActivateNormalGame.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -669,10 +641,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 734655380050764413, guid: 9c3be46298fef5646af195c639e18090, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7593833394316240096, guid: 9c3be46298fef5646af195c639e18090, type: 3}
       propertyPath: m_Name
       value: Car and Window

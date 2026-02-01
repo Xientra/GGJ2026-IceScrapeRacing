@@ -654,8 +654,12 @@ MonoBehaviour:
   ease: 18
   duration: 0.3
   ignitionShakeMagnitude: 0.05
-  minTime: 2
-  maxTime: 5
+  ignitionTime: 0
+  smokeVFX: {fileID: 0}
+  outline: {fileID: 0}
+  ignitionClip: {fileID: 0}
+  ignitionAudio: {fileID: 0}
+  ignitionVolume: 1
 --- !u!136 &3890669179225471572
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ RWTexture2D<float4> Result;
 Texture2D<float4> ScrapeMask;
 SamplerState samplerScrapeMask; // this is automatically declared when the texture is set
 
+Texture2D<float4> ScrapeEdgeMask;
+SamplerState samplerScrapeEdgeMask; // this is automatically declared when the texture is set
+
 // variables
 int2 resolution;
 float scrapeSize;
@@ -81,5 +84,24 @@ void CSMain (uint3 id : SV_DispatchThreadID)
         currentIce += currentIceRegrowth * deltaTime; 
     
     currentIce -= clear * s * clearStrength;
-    Result[id.xy] = float4(1.0f, 1.0f, 1.0f, currentIce);
+
+
+
+
+    // ----- Edge Calculation ----- //
+
+    float currentEdge = Result[id.xy];
+    
+    float4 e = ScrapeEdgeMask.SampleLevel(samplerScrapeEdgeMask, scrapeMaskUV, 0);
+
+    currentEdge += clear * s * clearStrength;
+    if (currentIce > 0.8f)
+    currentEdge -= clear * e * clearStrength * 4;
+
+    if (currentEdge < 1.0f)
+        currentEdge += currentIceRegrowth * 0.25f * deltaTime;
+
+    // ----- write results ----- //
+    float4 currentColor = Result[id.xy];
+    Result[id.xy] = float4(currentEdge, currentColor.y, currentColor.z, currentIce);
 }

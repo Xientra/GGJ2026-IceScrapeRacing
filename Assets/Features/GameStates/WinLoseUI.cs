@@ -1,5 +1,4 @@
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +6,9 @@ public class WinLoseUI : MonoBehaviour
 {
     public CanvasGroup winCanvasGroup;
     public CanvasGroup loseCanvasGroup;
+
+    public RectTransform winText;
+    public RectTransform loseText;
     
     private void Start()
     {
@@ -15,6 +17,9 @@ public class WinLoseUI : MonoBehaviour
         winCanvasGroup.alpha = 0;
         loseCanvasGroup.gameObject.SetActive(false);
         loseCanvasGroup.alpha = 0;
+        
+        winText.gameObject.SetActive(true);
+        loseText.gameObject.SetActive(false);
     }
 
     [ContextMenu("GameWon")]
@@ -50,6 +55,10 @@ public class WinLoseUI : MonoBehaviour
 
     public void DisableUI()
     {
+        winText.gameObject.SetActive(false);
+        loseText.gameObject.SetActive(true);
+        
+        
         if (winCanvasGroup.alpha != 0)
         {
             winCanvasGroup.DOFade(0, 0.5f).OnComplete(() =>

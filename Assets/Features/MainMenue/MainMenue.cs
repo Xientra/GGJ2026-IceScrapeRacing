@@ -30,10 +30,6 @@ public class MainMenue : MonoBehaviour
             .SetOptions(AxisConstraint.None, AxisConstraint.X)
             .SetEase(Ease.OutExpo).Play()
             .onComplete += ActivateNormalGame;
-
-
-        HandL.SetActive(true);
-        HandR.SetActive(true);
     }
 
     public void ExitPressed()
@@ -43,6 +39,10 @@ public class MainMenue : MonoBehaviour
 
     public void ActivateNormalGame()
     {
+        HandL.SetActive(true);
+        HandR.SetActive(true);
         OnActivateNormalGame.Invoke();
+        
+        gameObject.SetActive(false);
     }
 }

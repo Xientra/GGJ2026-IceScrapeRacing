@@ -59,18 +59,10 @@ public class GameManager : MonoBehaviour
         _remainingTime = timeInSeconds;
     }
 
-    private void EndGame(bool playerWon)
+    public void EndGame(bool playerWon)
     {
         _remainingTime = 0;
         GameIsRunning = false;
         GameOver?.Invoke(this, playerWon);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            EndGame(true);
-        }
     }
 }

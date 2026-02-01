@@ -6,6 +6,7 @@ public class MouseInteractionManager : MonoBehaviour
 {
     private  Camera _camera;
     private InputSystem_Actions _input;
+    public LayerMask mask;
     
     private Outlinable _lastOutlinable;
     private IInteracttable _lastInteracttable;
@@ -31,7 +32,7 @@ public class MouseInteractionManager : MonoBehaviour
         hoverTriggert = false;
         if(scraping) return;
         
-        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100))
+        if (Physics.Raycast(_camera.ScreenPointToRay(mousePos), out RaycastHit hit, 100,mask))
         {
             var interacttable = hit.collider.gameObject.GetComponent<IInteracttable>();
             if (interacting)

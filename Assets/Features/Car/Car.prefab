@@ -202,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916346033421711958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95315819bdcd0c347a55476ce197fa49, type: 3}
   m_Name: 
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 9137058412072862472}
   - component: {fileID: 2732342740441807779}
   - component: {fileID: 471728300536770103}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 3890669179225471572}
   - component: {fileID: 8881871433859549413}
   - component: {fileID: 2734678307642727950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Z\xFCndschloss und Schl\xFCssel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 3638241605398311986}
   - component: {fileID: 3683905622420814439}
   - component: {fileID: 946794959848071893}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6289042900961703095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,6 +1297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3e916efd12bb0468f7f77f44aa9e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseInteractionManager
+  mask:
+    serializedVersion: 2
+    m_Bits: 520
 --- !u!1001 &561290905689657706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1622,6 +1625,10 @@ PrefabInstance:
     - target: {fileID: 1744635709056722033, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442330594724574480, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6367911468402277036, guid: e4d5736674a647d4a8066c282a2f153c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

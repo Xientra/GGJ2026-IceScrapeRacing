@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150137723554916101}
   - component: {fileID: 3498141504739725187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9141916929612920682}
   - component: {fileID: 1696880983695690837}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4551704381602255712}
   - component: {fileID: 8179314047520116911}
   - component: {fileID: 8598080043766739617}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898155150141059049}
   - component: {fileID: 2708197232787412044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7977055903319694480}
   - component: {fileID: 8271209213040384555}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 0.016000032, y: 2.087, z: -3.496}
+  lastSrcPosition: {x: -0.0063899755, y: 2.0600028, z: -3.4848213}
   lastSrcRotation: {x: 0.003933632, y: -0, z: -0, w: 0.99999225}
   wpsDropdown: 1
   dropToFloorOffset: 0
@@ -615,7 +615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8290506897072798371}
   - component: {fileID: 933384160857134325}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HightLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 8013411320981934346}
   - component: {fileID: 7537210494436026022}
   - component: {fileID: 4469409043998186282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7638264691455619156}
   - component: {fileID: 168105185885485713}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5529750203379630277}
   - component: {fileID: 2620959820308609910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6597402932095063144}
   - component: {fileID: 8637621323984449599}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MainMenue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,6 @@ Transform:
   - {fileID: 5666644984037606714}
   - {fileID: 2593453029393833843}
   - {fileID: 6378508304641485077}
-  - {fileID: 6980722521085202599}
   - {fileID: 7977055903319694480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1083,10 +1082,34 @@ MonoBehaviour:
   HandL: {fileID: 0}
   HandR: {fileID: 0}
   dotPath: {fileID: 8271209213040384555}
-  duration: 3
+  duration: 4
   OnActivateNormalGame:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CarCameraShake, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &6033549545476580383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4209631568938628791}
   - component: {fileID: 3828809471982062154}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HightLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2840994249943919079}
   - component: {fileID: 5325153816462455441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6378508304641485077}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPosMainMenue
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -1311,7 +1334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6774878586691951546}
   - component: {fileID: 3036971314246183416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,7 +1425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2593453029393833843}
   - component: {fileID: 4961422728065298216}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: =)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8018011634519859098}
   - component: {fileID: 8158348583363605493}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6168459850293348855}
   - component: {fileID: 5462386137866918716}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,169 +1690,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &8156124466735189356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6980722521085202599}
-  - component: {fileID: 3739730375855910667}
-  - component: {fileID: 7256535471234834377}
-  - component: {fileID: 8402221985434308751}
-  - component: {fileID: 4223667551192116431}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6980722521085202599
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156124466735189356}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0407828, y: -0, z: -0, w: 0.99916804}
-  m_LocalPosition: {x: 1.08461, y: -0.54, z: -0.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6597402932095063144}
-  m_LocalEulerAnglesHint: {x: 4.675, y: 0, z: 0}
---- !u!20 &3739730375855910667
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156124466735189356}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 10000
-  field of view: 56
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 1
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &7256535471234834377
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156124466735189356}
-  m_Enabled: 1
---- !u!114 &8402221985434308751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156124466735189356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
---- !u!114 &4223667551192116431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156124466735189356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: EPO::EPOOutline.Outliner
-  stage: 1
-  renderingStrategy: 0
-  renderingMode: 0
-  outlineLayerMask: -1
-  primaryBufferSizeMode: 0
-  primaryRendererScale: 0.75
-  primarySizeReference: 800
-  blurShift: 0
-  dilateShift: 0.25
-  dilateIterations: 1
-  dilateQuality: 0
-  blurIterations: 1
-  blurType: 1
 --- !u!1 &8393791587256828185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6389874013441186052}
   - component: {fileID: 8909171045036818040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1931,7 +1791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5801979041389538985}
   - component: {fileID: 8792302475275152755}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2022,7 +1882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388280173633476009}
   - component: {fileID: 4126908511594985273}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2113,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2750363091610428527}
   - component: {fileID: 5455647920853792376}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Freeze BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5666644984037606714}
   - component: {fileID: 7158973352859857054}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: UwU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
